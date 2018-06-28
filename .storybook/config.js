@@ -1,6 +1,8 @@
 import { configure, addDecorator } from '@storybook/react';
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
+
+import '../src/global-styles';
 import def from '../src/theme/default';
 
 // automatically import all files ending in *.stories.js
