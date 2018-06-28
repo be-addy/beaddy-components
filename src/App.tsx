@@ -2,13 +2,15 @@ import * as React from 'react';
 
 import { ThemeProvider } from 'styled-components';
 
+import def from './theme/default';
+
 import ThemeSwitcher from './ThemeSwitcher';
 
 import TextButton from './components/TextButton';
 
 class App extends React.Component {
     public state = {
-        theme: {},
+        theme: def,
     };
 
     public render() {

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Theme from '../../theme';
 
 interface Props {
     color?: string;
@@ -6,13 +7,13 @@ interface Props {
     width?: string;
     height?: string;
 
-    theme?: any;
+    theme?: Theme;
 }
 
 export default styled.button`
-    background-color: ${(props: Props) => props.color || props.theme.primary || '#5b31da'}
+    background-color: ${(props: Props) => props.color || (props.theme as Theme).primary}
 
     border-radius: ${props => props.radius || '100px'}
-    width: ${props => props.width || '164px'};
-    height: ${props => props.height || '40px'};
+    width: ${props => props.width || '164px'}
+    height: ${props => props.height || '40px'}
 `;

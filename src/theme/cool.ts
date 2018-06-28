@@ -1,4 +1,6 @@
-const theme = {
+import Theme from './';
+
+const Cool: Theme = {
     font: 'arial',
 
     primary: 'lightGreen',
@@ -8,4 +10,4 @@ const theme = {
     textColor: 'blue',
 };
 
-export default theme;
+export default Cool;

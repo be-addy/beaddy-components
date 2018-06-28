@@ -1,4 +1,6 @@
-const theme = {
+import Theme from './';
+
+const Warm: Theme = {
     font: 'serif',
     
     primary: 'darkOrange',
@@ -8,4 +10,4 @@ const theme = {
     textColor: 'red',
 };
 
-export default theme;
+export default Warm;

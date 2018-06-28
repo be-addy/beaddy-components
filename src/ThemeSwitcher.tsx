@@ -1,5 +1,6 @@
 import * as React from 'react';
 
+import def from './theme/default';
 import cool from './theme/cool';
 import warm from './theme/warm';
 
@@ -10,9 +11,8 @@ interface Props {
 class ThemeSwitcher extends React.Component<Props> {
     public state = {
         name: 'default',
-        theme: {},
     };
-    
+
     constructor(props?: any) {
         super(props);
         this.handleThemeChange = this.handleThemeChange.bind(this);
@@ -20,30 +20,30 @@ class ThemeSwitcher extends React.Component<Props> {
 
     public render() {
         return (
-                <div>
-                    <label>Default<input
-                        type="radio"
-                        name="theme"
-                        value="default"
-                        checked={this.state.name === 'default'}
-                        onChange={this.handleThemeChange}
-                    /></label>
-                    <label>Warm<input
-                        type="radio"
-                        name="theme"
-                        value="warm"
-                        checked={this.state.name === 'warm'}
-                        onChange={this.handleThemeChange}
-                    /></label>
-                    <label>Cool<input
-                        type="radio"
-                        name="theme"
-                        value="cool"
-                        checked={this.state.name === 'cool'}
-                        onChange={this.handleThemeChange}
-                    /></label>
-                </div>
-                   
+            <div>
+                <label>Default<input
+                    type="radio"
+                    name="theme"
+                    value="default"
+                    checked={this.state.name === 'default'}
+                    onChange={this.handleThemeChange}
+                /></label>
+                <label>Warm<input
+                    type="radio"
+                    name="theme"
+                    value="warm"
+                    checked={this.state.name === 'warm'}
+                    onChange={this.handleThemeChange}
+                /></label>
+                <label>Cool<input
+                    type="radio"
+                    name="theme"
+                    value="cool"
+                    checked={this.state.name === 'cool'}
+                    onChange={this.handleThemeChange}
+                /></label>
+            </div>
+
         );
     }
 
@@ -59,7 +59,7 @@ class ThemeSwitcher extends React.Component<Props> {
                 theme = cool;
                 break;
             default:
-                theme = {};
+                theme = def;
         }
 
         this.setState({
