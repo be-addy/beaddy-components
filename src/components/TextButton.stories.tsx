@@ -6,4 +6,4 @@ import TextButton from './TextButton';
 
 const stories = storiesOf('Button', module);
 
-stories.add('with text', () => <TextButton onClick={() => alert('clicked')} text="Hello Button" />);
+stories.add('with text', () => <TextButton onClick={() => alert('clicked')} text="Text Button" />);

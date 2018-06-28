@@ -19,7 +19,7 @@ class App extends React.Component {
                 <div>
                     <ThemeSwitcher onSwitch={theme => this.setState({ theme })} />
                     <div>
-                        <TextButton onClick={this.onClick} text="Ok" />
+                        <TextButton onClick={this.onClick} text="Text Button" />
                     </div>
                 </div>
             </ThemeProvider>
