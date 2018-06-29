@@ -7,6 +7,7 @@ import def from './theme/default';
 import ThemeSwitcher from './ThemeSwitcher';
 
 import TextButton from './components/TextButton';
+import ModalOkCancel from './components/ModalOkCancel';
 
 class App extends React.Component {
     public state = {
@@ -20,6 +21,14 @@ class App extends React.Component {
                     <ThemeSwitcher onSwitch={theme => this.setState({ theme })} />
                     <div>
                         <TextButton onClick={this.onClick} text="Text Button" />
+                        <ModalOkCancel
+                            title="Quiting early today are we?"
+                            message="No problem. We’ll save your campaign as draft."
+                            buttonOkText="Save as draft"
+                            buttonCancelText="Stay here"
+                            onOk={this.onClick}
+                            onCancel={this.onClick} 
+                        />
                     </div>
                 </div>
             </ThemeProvider>

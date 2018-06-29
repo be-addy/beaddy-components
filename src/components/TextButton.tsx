@@ -7,13 +7,13 @@ interface Props {
     onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
     text: string;
 
-    disabled?: boolean;
+    width?: string;
     textColor?: string;
     buttonColor?: string;
 }
 
-export default ({ onClick, text, textColor, buttonColor }: Props) => (
-    <Button color={buttonColor} onClick={onClick}>
-        <Text color={textColor}>{text}</Text>
+export default (props: Props) => (
+    <Button color={props.buttonColor} width={props.width} onClick={props.onClick}>
+        <Text color={props.textColor}>{props.text}</Text>
     </Button>
 );

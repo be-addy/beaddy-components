@@ -1,9 +1,10 @@
 import * as React from 'react';
 
 import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 
 import TextButton from './TextButton';
 
 const stories = storiesOf('Button', module);
 
-stories.add('with text', () => <TextButton onClick={() => alert('clicked')} text="Text Button" />);
+stories.add('default', () => <TextButton onClick={() => action('clicked')} text="Text Button" />);
