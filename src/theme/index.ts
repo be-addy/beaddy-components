@@ -1,9 +1,22 @@
 export default interface Theme {
     font: string;
 
-    primary: string;
-    secondary: string;
+    button: {
+        color: string,
+        text: {
+            color: string,
+        }
+    };
 
-    headerColor: string;
-    textColor: string;
+    panel: {
+        color: string,
+    };
+
+    header: {
+        color: string;
+    };
+
+    text: {
+        color: string;
+    };
 }

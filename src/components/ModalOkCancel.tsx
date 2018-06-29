@@ -18,7 +18,7 @@ interface Props {
 const ModalOkCancel = ({ title, message, buttonOkText, buttonCancelText, onOk, onCancel }: Props) => (
     <Panel width="491px" height="207px">
         <Header>{title}</Header>
-        <Text marginBottom="20px" color="rgba(53, 46, 86, 0.6)">{message}</Text>
+        <Text marginBottom="20px">{message}</Text>
         <Row>
             <TextButton buttonColor="#352e56" width="150px" onClick={onOk} text={buttonOkText} />
             <TextButton onClick={onCancel} width="150px" text={buttonCancelText} />

@@ -12,7 +12,7 @@ interface Props {
 }
 
 export default styled.button`
-    background-color: ${(props: Props) => props.color || (props.theme as Theme).primary};
+    background-color: ${(props: Props) => props.color || (props.theme as Theme).button.color};
 
     border-radius: ${props => props.radius || '100px'};
     width: ${props => props.width || '164px'};

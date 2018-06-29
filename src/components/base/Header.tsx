@@ -10,6 +10,6 @@ interface Props {
 
 export default styled.span`
     font-family: ${(props: Props) => props.font || (props.theme as Theme).font};
-    color: ${props => props.color || props.theme.headerColor};
+    color: ${(props: Props) => props.color || (props.theme as Theme).header.color};
     font-size: 24px;
 `;

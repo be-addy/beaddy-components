@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { ThemeProvider } from 'styled-components';
 
-import def from './theme/default';
+import light from './theme/light';
 
 import ThemeSwitcher from './ThemeSwitcher';
 
@@ -11,7 +11,7 @@ import ModalOkCancel from './components/ModalOkCancel';
 
 class App extends React.Component {
     public state = {
-        theme: def,
+        theme: light,
     };
 
     public render() {

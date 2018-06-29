@@ -1,8 +1,7 @@
 import * as React from 'react';
 
-import def from './theme/default';
-import cool from './theme/cool';
-import warm from './theme/warm';
+import light from './theme/light';
+import dark from './theme/dark';
 
 interface Props {
     onSwitch: (theme: any) => void;
@@ -10,7 +9,7 @@ interface Props {
 
 class ThemeSwitcher extends React.Component<Props> {
     public state = {
-        name: 'default',
+        name: 'light',
     };
 
     constructor(props?: any) {
@@ -21,29 +20,21 @@ class ThemeSwitcher extends React.Component<Props> {
     public render() {
         return (
             <div>
-                <label>Default<input
+                <label>Light<input
                     type="radio"
                     name="theme"
-                    value="default"
-                    checked={this.state.name === 'default'}
+                    value="light"
+                    checked={this.state.name === 'light'}
                     onChange={this.handleThemeChange}
                 /></label>
-                <label>Warm<input
+                <label>Dark<input
                     type="radio"
                     name="theme"
-                    value="warm"
-                    checked={this.state.name === 'warm'}
-                    onChange={this.handleThemeChange}
-                /></label>
-                <label>Cool<input
-                    type="radio"
-                    name="theme"
-                    value="cool"
-                    checked={this.state.name === 'cool'}
+                    value="dark"
+                    checked={this.state.name === 'dark'}
                     onChange={this.handleThemeChange}
                 /></label>
             </div>
-
         );
     }
 
@@ -52,14 +43,14 @@ class ThemeSwitcher extends React.Component<Props> {
         let theme = null;
 
         switch (name) {
-            case 'warm':
-                theme = warm;
+            case 'light':
+                theme = light;
                 break;
-            case 'cool':
-                theme = cool;
+            case 'dark':
+                theme = dark;
                 break;
             default:
-                theme = def;
+                throw 'Unknown theme selected';
         }
 
         this.setState({
