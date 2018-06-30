@@ -15,6 +15,10 @@ const Light: Theme = {
         }
     },
 
+    title: {
+        color: PRIMARY_COLOR,
+    },
+
     input: {
         color: PRIMARY_COLOR,
     },

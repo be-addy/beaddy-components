@@ -1,27 +1,17 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import Theme from '../../../theme';
+import Title from '../Title';
 
-interface Props {
-    text?: string;
-    placeholder?: string;
-    label?: string;
-    onChange: (text: string) => void;
+interface StyledProps {
+    theme?: Theme;
 }
 
-const Text = styled.span`
-    font-size: 10px;
-    font-weight: 800;
-    font-family: ${(props: any) => props.font || props.theme.font};
-    letter-spacing: 1px;
-    color: ${props => props.color || props.theme.input.color};
-    display: block;
-`;
-
 const Input = styled.input`
-    font-family: ${(props: any) => props.font || props.theme.font};
+    font-family: ${(props: StyledProps) => (props.theme as Theme).font};
     background: transparent;
     border: none;
-    border-bottom: 3px solid ${props => props.color || props.theme.input.color};
+    border-bottom: 3px solid ${(props: StyledProps) => (props.theme as Theme).input.color};
     &::placeholder {
         font-size: 14px;
         font-weight: normal;
@@ -30,11 +20,20 @@ const Input = styled.input`
     }
 `;
 
+interface Props {
+    text?: string;
+    placeholder?: string;
+    label?: string;
+    onChange: (text: string) => void;
+
+    theme?: Theme;
+}
+
 class Component extends React.Component<Props> {
     public render() {
         const { text, placeholder, label, onChange } = this.props;
         return (
-            <label><Text>{label}</Text>
+            <label><Title>{label}</Title>
                 <Input
                     type="text"
                     value={text}

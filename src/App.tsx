@@ -6,6 +6,7 @@ import light from './theme/light';
 
 import ThemeSwitcher from './ThemeSwitcher';
 
+import Popover from './components/base/Popover';
 import TextButton from './components/TextButton';
 import Input from './components/base/Input';
 import ModalOkCancel from './components/ModalOkCancel';
@@ -31,6 +32,7 @@ class App extends React.Component {
                             onCancel={action} 
                         />
                         <Input label="CAMPAIGN NAME" placeholder="Campaign name" onChange={text => action(text)} />
+                        <Popover title="MANAGE CAMPAIGN" />
                     </div>
                 </div>
             </ThemeProvider>

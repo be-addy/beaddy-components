@@ -19,6 +19,10 @@ const Dark: Theme = {
         color: 'white',
     },
 
+    title: {
+        color: PRIMARY_COLOR,
+    },
+
     input: {
         color: PRIMARY_COLOR,
     },

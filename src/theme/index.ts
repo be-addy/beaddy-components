@@ -12,6 +12,10 @@ export default interface Theme {
         }
     };
 
+    title: {
+        color: string,
+    };
+
     input: {
         color: string,
     };
