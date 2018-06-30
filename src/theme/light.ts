@@ -4,7 +4,10 @@ const Light: Theme = {
     font: 'Muli',
 
     button: {
-        color: '#5b31da',
+        color: {
+            default: '#5b31da',
+            hover: '#ac97ec',
+        },
         text: {
             color: '#ffffff',
         }

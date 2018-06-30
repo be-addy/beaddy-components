@@ -4,7 +4,10 @@ const Dark: Theme = {
     font: 'Arial',
 
     button: {
-        color: 'grey',
+        color: {
+            default: 'grey',
+            hover: 'lightgrey',
+        },
         text: {
             color: 'white',
         }

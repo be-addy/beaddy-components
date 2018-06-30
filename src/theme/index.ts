@@ -2,7 +2,11 @@ export default interface Theme {
     font: string;
 
     button: {
-        color: string,
+        color: {
+            default: string,
+            hover: string,
+        },
+
         text: {
             color: string,
         }
