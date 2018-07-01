@@ -1,6 +1,46 @@
 import * as React from 'react';
 import styled from 'styled-components';
+// import Theme from '../../theme';
+
 import Title from './Title';
+
+const Triangle = styled.div`
+    width: 100px;
+    height: 10px;
+    position: relative;
+    overflow: hidden;
+
+    &:after {
+        content: "";
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background: #ffffff;
+        transform: rotate(45deg);
+        top: 10px;
+        left: 25px;
+        box-shadow: 0 0 20px 0 rgba(53, 46, 86, 0.1);
+        border: solid 1px rgba(183, 179, 204, 0.3);
+
+        z-index: 1;
+    }
+`;
+
+const List = styled.ul`
+    margin: 0;
+    padding: 0;
+
+    height: 100px;
+    width: 100px;
+
+    border-radius: 5px;
+    box-shadow: 0 0 20px 0 rgba(53, 46, 86, 0.1);
+    background-color: #ffffff;
+    border: solid 1px rgba(183, 179, 204, 0.3);
+
+    position: relative;
+    top: -1px;
+`;
 
 const Menu = styled.div.attrs({
     tabIndex: 0,
@@ -9,6 +49,7 @@ const Menu = styled.div.attrs({
     &:before {
         content: "click me!";
     }
+
     &:focus {
         pointer-events: none;
     }
@@ -16,13 +57,9 @@ const Menu = styled.div.attrs({
     padding: 0;
     margin: 0 0 1em 0;
     outline: 0;
-    &:before {
-        padding: 5px 10px;
-        background-color: #94a4a5;
-    }   
 `;
 
-const MenuContent = styled.ul`
+const MenuContent = styled.div`
     position: absolute;
     z-index: 1;
     opacity: 0;
@@ -34,30 +71,9 @@ const MenuContent = styled.ul`
         visibility: visible;
         pointer-events: auto;
     }
-
-    &:before {
-        content: "";
-        width: 0;
-        height: 0;
-
-        border-bottom: 10px solid #364656;
-        border-left: 10px solid transparent;
-        border-right: 10px solid transparent;
-
-        position: absolute;
-        top: -10px;
-    }
-
-    background-color: #364656;
-    width: auto;
-
-    margin-top: 19px;
-    margin-left: 0;
-    padding: 10px;
 `;
 
 const Item = styled.li`
-    color: #f2f5e9;
     list-style-type: none;
     white-space: nowrap;
 `;
@@ -81,8 +97,11 @@ interface Props {
 export default ({ title }: Props) => (
     <Menu>
         <MenuContent>
-            <Title>{title}</Title>
-            <Item><Button>One</Button></Item>
-            <Item><Button>Two</Button></Item>
+            <Triangle />
+            <List>
+                <Title>{title}</Title>
+                <Item><Button>One</Button></Item>
+                <Item><Button>Two</Button></Item>
+            </List>
         </MenuContent>
     </Menu>);
