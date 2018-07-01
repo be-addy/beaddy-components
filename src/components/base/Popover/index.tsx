@@ -1,12 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import Title from '../Title';
-
 import Panel from './Panel';
-import List from './List';
-import Item from './List/Item';
-import Button from './Button';
 
 const Menu = styled.div.attrs({
     tabIndex: 0,
@@ -40,18 +35,15 @@ const Content = styled.div`
 `;
 
 interface Props {
-    title: string;
+    width: string;
+    children: any;
 }
 
-export default ({ title }: Props) => (
+export default ({ children, width }: Props) => (
     <Menu>
         <Content>
-            <Panel>
-                <List>
-                    <Title>{title}</Title>
-                    <Item><Button>One</Button></Item>
-                    <Item><Button>Two</Button></Item>
-                </List>
+            <Panel width={width}>
+                {children}
             </Panel>
         </Content>
     </Menu>

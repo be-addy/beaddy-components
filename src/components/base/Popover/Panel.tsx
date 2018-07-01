@@ -2,7 +2,6 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 const Triangle = styled.div`
-    width: 100px;
     height: 10px;
     position: relative;
     overflow: hidden;
@@ -24,9 +23,6 @@ const Triangle = styled.div`
 `;
 
 const Panel = styled.div`
-    height: 100px;
-    width: 100px;
-
     border-radius: 5px;
     box-shadow: 0 0 20px 0 rgba(53, 46, 86, 0.1);
     background-color: #ffffff;
