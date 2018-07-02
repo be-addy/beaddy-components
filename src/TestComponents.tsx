@@ -1,34 +1,16 @@
 import * as React from 'react';
-import Popover from './components/base/Popover';
-import Panel from './components/base/Popover/Panel';
-import PopoverList from './PopoverList';
 
-import TextButton from './components/TextButton';
-import TextInput from './components/TextInput';
-import ModalOkCancel from './components/ModalOkCancel';
+import { PopoverAlwaysVisible, PopoverTogglable } from './components/base/Popover/index.stories';
+import { TextButtonDefault } from './components/TextButton.stories';
+import { TextInputDefault } from './components/TextInput.stories';
+import { ModalOkCancelDefault } from './components/ModalOkCancel.stories';
 
 export default () => (
     <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-        <TextButton onClick={action} text="Text Button" />
-        <ModalOkCancel
-            title="Quiting early today are we?"
-            message="No problem. We’ll save your campaign as draft."
-            buttonOkText="Save as draft"
-            buttonCancelText="Stay here"
-            onOk={action}
-            onCancel={action}
-        />
-        <TextInput label="CAMPAIGN NAME" placeholder="Campaign name" onChange={text => action(text)} />
-        <Panel>
-            <PopoverList />
-        </Panel>
-        <Popover>
-            <PopoverList />
-        </Popover>
+        {TextButtonDefault}
+        {ModalOkCancelDefault}
+        {TextInputDefault}
+        {PopoverAlwaysVisible}
+        {PopoverTogglable}
     </div>
 );
-
-function action(param?: any) {
-    // tslint:disable-next-line
-    console.log('action', param);
-}

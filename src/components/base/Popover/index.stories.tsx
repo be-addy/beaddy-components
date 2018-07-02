@@ -8,14 +8,17 @@ import PopoverList from '../../../PopoverList';
 
 const stories = storiesOf('Popover', module);
 
-stories.add('always visible', () => (
+export const PopoverAlwaysVisible = (
     <Panel>
         <PopoverList />
     </Panel>
-));
+);
 
-stories.add('togglable', () => (
+export const PopoverTogglable = (
     <Popover>
         <PopoverList />
     </Popover>
-));
+);
+
+stories.add('always visible', () => PopoverAlwaysVisible);
+stories.add('togglable', () => PopoverTogglable);

@@ -7,4 +7,11 @@ import TextButton from './TextButton';
 
 const stories = storiesOf('Button', module);
 
-stories.add('default', () => <TextButton onClick={() => action('clicked')} text="Text Button" />);
+export const TextButtonDefault = (
+    <TextButton
+        onClick={() => action('clicked')}
+        text="Text Button"
+    />
+);
+
+stories.add('default', () => TextButtonDefault);

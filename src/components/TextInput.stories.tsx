@@ -7,10 +7,12 @@ import TextInput from './TextInput';
 
 const stories = storiesOf('TextInput', module);
 
-stories.add('default', () => (
+export const TextInputDefault = (
     <TextInput
         label="CAMPAIGN NAME"
         placeholder="Campaign name"
         onChange={text => action(text)}
     />
-));
+);
+
+stories.add('default', () => TextInputDefault);
