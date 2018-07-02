@@ -10,11 +10,16 @@ import Button from './components/base/Popover/Button';
 export default () => (
     <List>
         <Item><Title>MANAGE CAMPAIGN</Title></Item>
-        <Item><Button>Edit Campaign</Button></Item>
-        <Item><Button>Copy Campaign</Button></Item>
-        <Item><Button>Delete Campaign</Button></Item>
+        <Item><Button onClick={() => action('1')}>Edit Campaign</Button></Item>
+        <Item><Button onClick={() => action('2')}>Copy Campaign</Button></Item>
+        <Item><Button onClick={() => action('3')}>Delete Campaign</Button></Item>
         <Item><Line /></Item>
-        <Item><Button>Launch Campaign</Button></Item>
-        <Item><Button>Change launch date</Button></Item>
+        <Item><Button disabled={true} onClick={() => action('4')}>Launch Campaign</Button></Item>
+        <Item><Button disabled={true} onClick={() => action('5')}>Change launch date</Button></Item>
     </List>
 );
+
+// tslint:disable
+function action(text: string) {
+    console.log(text);
+}
