@@ -2,19 +2,20 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 const Triangle = styled.div`
-    height: 10px;
+    height: 15px;
     position: relative;
     overflow: hidden;
 
     &:after {
         content: "";
         position: absolute;
-        width: 50px;
-        height: 50px;
+        width: 25px;
+        height: 25px;
         background: #ffffff;
         transform: rotate(45deg);
-        top: 10px;
-        left: 25px;
+        top: 5px;
+        left: 50%;
+        margin-left: -12px;
         box-shadow: 0 0 20px 0 rgba(53, 46, 86, 0.1);
         border: solid 1px rgba(183, 179, 204, 0.3);
 
