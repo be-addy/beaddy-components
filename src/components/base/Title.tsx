@@ -8,11 +8,10 @@ interface Props {
     theme?: Theme;
 }
 
-export default styled.span`
+export default styled.div`
     font-size: 10px;
     font-weight: 800;
     font-family: ${(props: Props) => props.font || (props.theme as Theme).font};
     letter-spacing: 1px;
     color: ${(props: Props) => props.color || (props.theme as Theme).title.color};
-    display: block;
 `;

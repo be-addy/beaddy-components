@@ -35,14 +35,13 @@ const Content = styled.div`
 `;
 
 interface Props {
-    width: string;
     children: any;
 }
 
-export default ({ children, width }: Props) => (
+export default ({ children }: Props) => (
     <Menu>
         <Content>
-            <Panel width={width}>
+            <Panel>
                 {children}
             </Panel>
         </Content>

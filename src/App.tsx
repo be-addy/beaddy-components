@@ -7,13 +7,8 @@ import light from './theme/light';
 import ThemeSwitcher from './ThemeSwitcher';
 
 import Popover from './components/base/Popover';
-import List from './components/base/Popover/List';
-import Item from './components/base/Popover/List/Item';
-import Button from './components/base/Popover/Button';
-
 import Panel from './components/base/Popover/Panel';
-
-import Title from './components/base/Title';
+import PopoverList from './PopoverList';
 
 import TextButton from './components/TextButton';
 import Input from './components/base/Input';
@@ -48,24 +43,11 @@ class App extends React.Component {
                                 width: '50%'
                             }}
                         >
-                            <Popover width="182px">
-                                <List>
-                                    <Title>MANAGE CAMPAIGN</Title>
-                                    <Item><Button>Edit Campaign</Button></Item>
-                                    <Item><Button>Copy Campaign</Button></Item>
-                                    <Item><Button>Delete Campaign</Button></Item>
-                                    <Item><hr /></Item>
-                                    <Item><Button>Launch Campaign</Button></Item>
-                                    <Item><Button>Change launch date</Button></Item>
-                                </List>
+                            <Popover>
+                                <PopoverList />
                             </Popover>
                             <Panel>
-                                <List>
-                                    <Title>MANAGE CAMPAIGN</Title>
-                                    <Item><Button>One</Button></Item>
-                                    <Item>Two</Item>
-                                    <Item>Three</Item>
-                                </List>
+                                <PopoverList />
                             </Panel>
                         </div>
                     </div>
