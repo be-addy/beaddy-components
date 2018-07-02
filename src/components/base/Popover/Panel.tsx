@@ -33,4 +33,15 @@ const Panel = styled.div`
     top: -1px;
 `;
 
-export default ({children}: any) => <div><Triangle /><Panel>{children}</Panel></div>;
+const Container = styled.div`
+    display: inline-block;
+`;
+
+export default ({ children }: any) => (
+    <Container>
+        <Triangle />
+        <Panel>
+            {children}
+        </Panel>
+    </Container>
+);
