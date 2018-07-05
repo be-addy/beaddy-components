@@ -1,11 +1,11 @@
 import * as React from 'react';
 
-import Title from './components/base/Popover/Title';
-import Line from './components/base/Line';
+import Title from './Title';
+import Line from '../Line';
 
-import List from './components/base/Popover/List';
-import Item from './components/base/Popover/List/Item';
-import Button from './components/base/Popover/Button';
+import List from './List';
+import Item from './List/Item';
+import Button from './Button';
 
 export default () => (
     <List>

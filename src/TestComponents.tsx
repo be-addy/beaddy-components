@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { PopoverAlwaysVisible, PopoverTogglable } from './components/base/Popover/index.stories';
+import { PopoverDefault } from './components/base/Popover/index.stories';
 import { TextButtonDefault } from './components/TextButton.stories';
 import { TextInputDefault } from './components/TextInput.stories';
 import { ModalOkCancelDefault } from './components/ModalOkCancel.stories';
@@ -9,8 +9,7 @@ const COMPONENTS = [
     TextButtonDefault,
     ModalOkCancelDefault,
     TextInputDefault,
-    PopoverAlwaysVisible,
-    PopoverTogglable,
+    PopoverDefault,
 ];
 
 export default () => (
