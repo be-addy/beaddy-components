@@ -1,9 +1,9 @@
 import * as React from 'react';
 
-import { PopoverDefault } from './components/base/Popover/index.stories';
-import { TextButtonDefault } from './components/TextButton.stories';
-import { TextInputDefault } from './components/TextInput.stories';
-import { ModalOkCancelDefault } from './components/ModalOkCancel.stories';
+import { PopoverDefault } from './stories/Popover.stories';
+import { TextButtonDefault } from './stories/TextButton.stories';
+import { TextInputDefault } from './stories/TextInput.stories';
+import { ModalOkCancelDefault } from './stories/ModalOkCancel.stories';
 
 const COMPONENTS = [
     TextButtonDefault,

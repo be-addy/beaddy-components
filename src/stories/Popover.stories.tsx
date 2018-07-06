@@ -3,8 +3,8 @@ import styled from 'styled-components';
 
 import { storiesOf } from '@storybook/react';
 
-import Popover from './';
-import PopoverTestList from './PopoverTestList';
+import Popover from '../components/Popover';
+import PopoverTestList from './Helpers/TestList';
 
 const stories = storiesOf('Popover', module);
 

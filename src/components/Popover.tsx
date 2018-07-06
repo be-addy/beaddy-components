@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-import Menu from './Menu';
-import Panel from './Panel';
+import Menu from './base/Popover/Menu';
+import Panel from './base/Popover/Panel';
 
 interface Props {
     visible: boolean;
