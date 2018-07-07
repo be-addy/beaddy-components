@@ -1,16 +1,26 @@
 import Theme from './';
 
+const PRIMARY_COLOR = '#5b31da';
+
 const Light: Theme = {
     font: 'Muli',
 
     button: {
         color: {
-            default: '#5b31da',
+            default: PRIMARY_COLOR,
             hover: '#ac97ec',
         },
         text: {
             color: '#ffffff',
         }
+    },
+
+    title: {
+        color: PRIMARY_COLOR,
+    },
+
+    input: {
+        color: PRIMARY_COLOR,
     },
 
     header: {

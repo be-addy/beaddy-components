@@ -5,9 +5,7 @@ import { ThemeProvider } from 'styled-components';
 import light from './theme/light';
 
 import ThemeSwitcher from './ThemeSwitcher';
-
-import TextButton from './components/TextButton';
-import ModalOkCancel from './components/ModalOkCancel';
+import TestComponents from './TestComponents';
 
 class App extends React.Component {
     public state = {
@@ -19,25 +17,10 @@ class App extends React.Component {
             <ThemeProvider theme={this.state.theme}>
                 <div>
                     <ThemeSwitcher onSwitch={theme => this.setState({ theme })} />
-                    <div>
-                        <TextButton onClick={this.onClick} text="Text Button" />
-                        <ModalOkCancel
-                            title="Quiting early today are we?"
-                            message="No problem. We’ll save your campaign as draft."
-                            buttonOkText="Save as draft"
-                            buttonCancelText="Stay here"
-                            onOk={this.onClick}
-                            onCancel={this.onClick} 
-                        />
-                    </div>
+                    <TestComponents />
                 </div>
             </ThemeProvider>
         );
-    }
-
-    onClick() {
-        // tslint:disable-next-line
-        console.log('onClick');
     }
 }
 

@@ -1,11 +1,13 @@
 import Theme from './';
 
+const PRIMARY_COLOR = 'grey';
+
 const Dark: Theme = {
     font: 'Arial',
 
     button: {
         color: {
-            default: 'grey',
+            default: PRIMARY_COLOR,
             hover: 'lightgrey',
         },
         text: {
@@ -15,6 +17,14 @@ const Dark: Theme = {
 
     header: {
         color: 'white',
+    },
+
+    title: {
+        color: PRIMARY_COLOR,
+    },
+
+    input: {
+        color: PRIMARY_COLOR,
     },
 
     text: {
