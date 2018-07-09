@@ -47,3 +47,6 @@ class PopoverTest extends React.Component {
 
 export const PopoverDefault = <PopoverTest />;
 stories.add('default', () => PopoverDefault);
+
+import Horizontal from '../components/base/Popover/Panel/Horizontal';
+export const PopoverHorizontal = <Horizontal />;
