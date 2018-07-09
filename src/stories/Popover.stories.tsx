@@ -6,6 +6,9 @@ import { storiesOf } from '@storybook/react';
 import Popover from '../components/Popover';
 import PopoverTestList from './Helpers/TestList';
 
+import Tooltip from '../components/Tooltip';
+import Content from '../components/base/Popover/Panel/Horizontal/Content';
+
 const stories = storiesOf('Popover', module);
 
 const Button = styled.button`
@@ -23,7 +26,12 @@ class PopoverTest extends React.Component {
                 <div>
                     <Button onClick={this.toggle}>Toggle</Button>
                     <Button onMouseOver={this.show} onMouseOut={this.hide}>Hover</Button>
-                    <Button onClick={this.toggle} onBlur={this.hide}>Focus</Button>
+                    <div style={{ display: 'flex' }}>
+                        <Button onClick={this.toggle} onBlur={this.hide}>Focus</Button>
+                        <Tooltip visible={this.state.visible}>
+                            <Content />
+                        </Tooltip>
+                    </div>
                 </div>
                 <Popover visible={this.state.visible}>
                     <PopoverTestList />
@@ -47,6 +55,3 @@ class PopoverTest extends React.Component {
 
 export const PopoverDefault = <PopoverTest />;
 stories.add('default', () => PopoverDefault);
-
-import Horizontal from '../components/base/Popover/Panel/Horizontal';
-export const PopoverHorizontal = <Horizontal />;
