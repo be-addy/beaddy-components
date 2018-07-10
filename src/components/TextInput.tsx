@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Title from './base/Title';
+import Title from './base/Input/Title';
 import Input from './base/Input';
 
 interface Props {
