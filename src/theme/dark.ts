@@ -34,6 +34,15 @@ const Dark: Theme = {
     panel: {
         color: 'darkgrey',
     },
+    
+    change: {
+        positive: {
+            color: 'blue',
+        },
+        negative: {
+            color: 'orange',
+        },
+    },
 };
 
 export default Dark;

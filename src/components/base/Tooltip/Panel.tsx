@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import Container from './Container';
+import Row from '../Row';
 
 const Triangle = styled.div`
     height: 18px;
@@ -37,16 +37,15 @@ const Panel = styled.div`
     left: -1px;
 
     background-color: rgb(53, 46, 86);
-    z-index: -100;
 
-    padding: 10px;
+    padding: 8px;
 `;
 
 export default ({ children }: any) => (
-    <Container>
+    <Row>
         <Triangle />
         <Panel>
             {children}
         </Panel>
-    </Container>
+    </Row>
 );

@@ -31,4 +31,13 @@ export default interface Theme {
     text: {
         color: string;
     };
+
+    change: {
+        positive: {
+            color: string;
+        },
+        negative: {
+            color: string;
+        }
+    };
 }

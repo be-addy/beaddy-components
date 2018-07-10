@@ -34,6 +34,15 @@ const Light: Theme = {
     panel: {
         color: '#ffffff'
     },
+
+    change: {
+        positive: {
+            color: '#23e2a1',
+        },
+        negative: {
+            color: '#ff426d',
+        },
+    },
 };
 
 export default Light;
