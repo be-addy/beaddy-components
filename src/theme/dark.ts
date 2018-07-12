@@ -37,11 +37,22 @@ const Dark: Theme = {
     
     change: {
         positive: {
-            color: 'blue',
+            color: 'lightgrey',
         },
         negative: {
-            color: 'orange',
+            color: 'darkgrey',
         },
+    },
+
+    chart: {
+        tooltip: {
+            background: {
+                color: 'white',
+            },
+            value: {
+                color: 'grey',
+            }
+        }
     },
 };
 

@@ -40,4 +40,15 @@ export default interface Theme {
             color: string;
         }
     };
+
+    chart: {
+        tooltip: {
+            background: {
+                color: string;
+            },
+            value: {
+                color: string;
+            }
+        }
+    };
 }

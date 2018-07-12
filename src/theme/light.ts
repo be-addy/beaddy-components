@@ -43,6 +43,17 @@ const Light: Theme = {
             color: '#ff426d',
         },
     },
+
+    chart: {
+        tooltip: {
+            background: {
+                color: 'rgb(53, 46, 86)',
+            },
+            value: {
+                color: '#ffffff',
+            }
+        }
+    },
 };
 
 export default Light;
