@@ -5,7 +5,7 @@ interface Props {
     disabled?: boolean;
 }
 
-export default styled.button`
+const Button = styled.button`
     background: transparent;
     border: none;
     outline: 0;
@@ -16,3 +16,5 @@ export default styled.button`
         color: ${(props: Props) => props.disabled ? 'grey' : '#ff8c31'};
     }
 `;
+
+export default Button;

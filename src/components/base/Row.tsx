@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 
-export default styled.div`
+const Row = styled.div`
     display:flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
 `;
+
+export default Row;

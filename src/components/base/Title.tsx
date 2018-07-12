@@ -8,10 +8,12 @@ interface Props {
     theme?: Theme;
 }
 
-export default styled.div`
+const Title = styled.div`
     font-size: 10px;
     font-weight: 800;
     font-family: ${(props: Props) => props.font || (props.theme as Theme).font};
     letter-spacing: 1px;
     color: ${(props: Props) => props.color || (props.theme as Theme).title.color};
 `;
+
+export default Title;

@@ -5,7 +5,7 @@ interface StyledProps {
     theme?: Theme;
 }
 
-export default styled.input`
+const Input = styled.input`
     font-family: ${(props: StyledProps) => (props.theme as Theme).font};
     background: transparent;
     border: none;
@@ -22,3 +22,5 @@ export default styled.input`
         outline: none;
     }
 `;
+
+export default Input;

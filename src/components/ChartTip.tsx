@@ -17,7 +17,7 @@ interface Props {
     visible: boolean;
 }
 
-export default ({ provider, value, change, direction, visible }: Props) => (
+const ChartTip = ({ provider, value, change, direction, visible }: Props) => (
     <Tooltip visible={visible}>
         <Row>
             <Provider type={provider} />
@@ -27,3 +27,5 @@ export default ({ provider, value, change, direction, visible }: Props) => (
         </Row>
     </Tooltip>
 );
+
+export default ChartTip;

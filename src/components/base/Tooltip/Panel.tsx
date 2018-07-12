@@ -27,7 +27,7 @@ const Triangle = styled.div`
     }
 `;
 
-const Panel = styled.div`
+const Content = styled.div`
     border-radius: 5px;
     box-shadow: 0 0 20px 0 rgba(53, 46, 86, 0.1);
     background-color: #ffffff;
@@ -41,11 +41,13 @@ const Panel = styled.div`
     padding: 8px;
 `;
 
-export default ({ children }: any) => (
+const Panel = ({ children }: any) => (
     <Row>
         <Triangle />
-        <Panel>
+        <Content>
             {children}
-        </Panel>
+        </Content>
     </Row>
 );
+
+export default Panel;

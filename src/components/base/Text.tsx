@@ -8,9 +8,11 @@ interface Props {
     theme?: Theme;
 }
 
-export default styled.span`
+const Text = styled.span`
     font-family: ${(props: Props) => props.font || (props.theme as Theme).font};
     color: ${(props: Props) => props.color || (props.theme as Theme).text.color};
     font-size: 14px;
     line-height: 1.29;
 `;
+
+export default Text;

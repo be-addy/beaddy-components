@@ -8,10 +8,12 @@ interface Props {
     children: any;
 }
 
-export default ({ children, visible }: Props) => (
+const Popover = ({ children, visible }: Props) => (
     <Menu visible={visible}>
         <Panel>
             {children}
         </Panel>
     </Menu>
 );
+
+export default Popover;

@@ -7,7 +7,7 @@ interface Props {
     theme?: Theme;
 }
 
-export default styled.div`
+const Arrow = styled.div`
     width: 16px;
     height: 16px;
 
@@ -17,3 +17,5 @@ export default styled.div`
         ? (props.theme as Theme).change.positive.color
         : (props.theme as Theme).change.negative.color}
 `;
+
+export default Arrow;

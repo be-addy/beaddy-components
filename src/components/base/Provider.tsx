@@ -17,7 +17,7 @@ interface Props {
     type: ProviderType;
 }
 
-export default ({ type }: Props) => {
+const Provider = ({ type }: Props) => {
     let provider;
 
     switch (type) {
@@ -33,3 +33,5 @@ export default ({ type }: Props) => {
 
     return provider;
 };
+
+export default Provider;
