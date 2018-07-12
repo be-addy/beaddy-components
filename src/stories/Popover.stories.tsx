@@ -6,10 +6,6 @@ import { storiesOf } from '@storybook/react';
 import Popover from '../components/Popover';
 import PopoverTestList from './Helpers/TestList';
 
-import ChartTip from '../components/ChartTip';
-
-import { Direction, ProviderType } from '../components/base/Types';
-
 const stories = storiesOf('Popover', module);
 
 const Button = styled.button`
@@ -27,21 +23,12 @@ class PopoverTest extends React.Component {
                 <div>
                     <Button onClick={this.toggle}>Toggle</Button>
                     <Button onMouseOver={this.show} onMouseOut={this.hide}>Hover</Button>
-                    <div style={{ display: 'flex' }}>
-                        <Button onClick={this.toggle} onBlur={this.hide}>Focus</Button>
-                        <ChartTip
-                            visible={this.state.visible}
-                            provider={ProviderType.TWITTER}
-                            value="224.003"
-                            change="20"
-                            direction={Direction.UP}
-                        />
-                    </div>
+                    <Button onClick={this.toggle} onBlur={this.hide}>Focus</Button>
                 </div>
                 <Popover visible={this.state.visible}>
                     <PopoverTestList />
                 </Popover>
-            </div >
+            </div>
         );
     }
 

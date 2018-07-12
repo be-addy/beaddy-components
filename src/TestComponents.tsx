@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import { PopoverDefault } from './stories/Popover.stories';
+import { ChartTipDefault } from './stories/ChartTip.stories';
 import { TextButtonDefault } from './stories/TextButton.stories';
 import { TextInputDefault } from './stories/TextInput.stories';
 import { ModalOkCancelDefault } from './stories/ModalOkCancel.stories';
@@ -10,6 +11,7 @@ const COMPONENTS = [
     ModalOkCancelDefault,
     TextInputDefault,
     PopoverDefault,
+    ChartTipDefault,
 ];
 
 export default () => (
