@@ -14,7 +14,9 @@ interface Props {
     visible: boolean;
 }
 
-export default styled.div`
+const Menu = styled.div`
     ${(props: Props) => props.visible ? Visible : Hidden}
     transition: visibility 0.5s;
 `;
+
+export default Menu;

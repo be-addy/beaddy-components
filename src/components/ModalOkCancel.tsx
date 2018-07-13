@@ -4,7 +4,7 @@ import TextButton from './TextButton';
 import Panel from './base/Panel';
 import Header from './base/Header';
 import Row from './base/Row';
-import Text from './base/Text';
+import Text from './base/Modal/Text';
 
 interface Props {
     title: string;
@@ -18,7 +18,7 @@ interface Props {
 const ModalOkCancel = ({ title, message, buttonOkText, buttonCancelText, onOk, onCancel }: Props) => (
     <Panel width="491px" height="207px">
         <Header>{title}</Header>
-        <Text marginBottom="20px">{message}</Text>
+        <Text>{message}</Text>
         <Row>
             <TextButton buttonColor="#352e56" width="150px" onClick={onOk} text={buttonOkText} />
             <TextButton onClick={onCancel} width="150px" text={buttonCancelText} />

@@ -34,6 +34,26 @@ const Light: Theme = {
     panel: {
         color: '#ffffff'
     },
+
+    change: {
+        positive: {
+            color: '#23e2a1',
+        },
+        negative: {
+            color: '#ff426d',
+        },
+    },
+
+    chart: {
+        tooltip: {
+            background: {
+                color: 'rgb(53, 46, 86)',
+            },
+            value: {
+                color: '#ffffff',
+            }
+        }
+    },
 };
 
 export default Light;

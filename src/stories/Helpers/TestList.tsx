@@ -8,7 +8,7 @@ import Button from '../../components/base/Popover/Button';
 
 import Line from '../../components/base/Line';
 
-export default () => (
+const TestList = () => (
     <List>
         <Item><Title>MANAGE CAMPAIGN</Title></Item>
         <Item><Button onClick={() => action('1')}>Edit Campaign</Button></Item>
@@ -19,6 +19,8 @@ export default () => (
         <Item><Button disabled={true} onClick={() => action('5')}>Change launch date</Button></Item>
     </List>
 );
+
+export default TestList;
 
 // tslint:disable
 function action(text: string) {
