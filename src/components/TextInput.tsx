@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Title from './base/Title';
+import Title from './base/Input/Title';
 import Input from './base/Input';
 
 interface Props {
@@ -9,7 +9,7 @@ interface Props {
     onChange: (text: string) => void;
 }
 
-export default ({ text, placeholder, label, onChange }: Props) => (
+const TextInput = ({ text, placeholder, label, onChange }: Props) => (
     <label><Title>{label}</Title>
         <Input
             type="text"
@@ -19,3 +19,5 @@ export default ({ text, placeholder, label, onChange }: Props) => (
         />
     </label>
 );
+
+export default TextInput;

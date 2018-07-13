@@ -10,7 +10,7 @@ interface Props {
     theme?: Theme;
 }
 
-export default styled.div`
+const Panel = styled.div`
     width: ${(props: Props) => props.width};
     height: ${props => props.height};
 
@@ -24,3 +24,5 @@ export default styled.div`
     align-items: center;
     justify-content: center;
 `;
+
+export default Panel;

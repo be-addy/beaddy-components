@@ -13,7 +13,7 @@ interface Props {
     buttonHoverColor?: string;
 }
 
-export default (props: Props) => (
+const TextButton = (props: Props) => (
     <Button
         color={props.buttonColor}
         hover={props.buttonHoverColor}
@@ -23,3 +23,5 @@ export default (props: Props) => (
         <Text color={props.textColor}>{props.text}</Text>
     </Button>
 );
+
+export default TextButton;

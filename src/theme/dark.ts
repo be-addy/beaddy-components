@@ -34,6 +34,26 @@ const Dark: Theme = {
     panel: {
         color: 'darkgrey',
     },
+    
+    change: {
+        positive: {
+            color: 'lightgrey',
+        },
+        negative: {
+            color: 'darkgrey',
+        },
+    },
+
+    chart: {
+        tooltip: {
+            background: {
+                color: 'white',
+            },
+            value: {
+                color: 'grey',
+            }
+        }
+    },
 };
 
 export default Dark;

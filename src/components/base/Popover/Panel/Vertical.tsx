@@ -23,7 +23,7 @@ const Triangle = styled.div`
     }
 `;
 
-const Panel = styled.div`
+const Content = styled.div`
     border-radius: 5px;
     box-shadow: 0 0 20px 0 rgba(53, 46, 86, 0.1);
     background-color: #ffffff;
@@ -37,11 +37,13 @@ const Container = styled.div`
     display: inline-block;
 `;
 
-export default ({ children }: any) => (
+const Panel = ({ children }: any) => (
     <Container>
         <Triangle />
-        <Panel>
+        <Content>
             {children}
-        </Panel>
+        </Content>
     </Container>
 );
+
+export default Panel;
