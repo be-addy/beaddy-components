@@ -58,8 +58,21 @@ const Light: Theme = {
     popover: {
         background: {
             color: '#ffffff',
-        }
-    }
+        },
+        list: {
+            button: {
+                active: {
+                    color: 'black',
+                },
+                hover: {
+                    color: '#ff8c31',
+                },
+                disabled: {
+                    color: 'grey',
+                },
+            },
+        },
+    },
 };
 
 export default Light;
