@@ -54,6 +54,12 @@ const Light: Theme = {
             }
         }
     },
+
+    popover: {
+        background: {
+            color: '#ffffff',
+        }
+    }
 };
 
 export default Light;

@@ -54,6 +54,12 @@ const Dark: Theme = {
             }
         }
     },
+
+    popover: {
+        background: {
+            color: 'darkgrey',
+        }
+    }
 };
 
 export default Dark;

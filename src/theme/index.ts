@@ -51,4 +51,26 @@ export default interface Theme {
             }
         }
     };
+
+    popover: {
+        background: {
+            color: string;
+        },
+        // list: {
+        //     title: {
+        //         color: string;
+        //     },
+        //     button: {
+        //         active: {
+        //             color: string;
+        //         };
+        //         disabled: {
+        //             color: string;
+        //         }
+        //     },
+        //     line: {
+        //         color: string;
+        //     }
+        // }
+    };
 }

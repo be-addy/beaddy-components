@@ -1,7 +1,6 @@
-import * as React from 'react';
 import styled from 'styled-components';
 
-const Triangle = styled.div`
+export const Triangle = styled.div`
     height: 15px;
     position: relative;
     overflow: hidden;
@@ -23,7 +22,7 @@ const Triangle = styled.div`
     }
 `;
 
-const Content = styled.div`
+export const Content = styled.div`
     border-radius: 5px;
     box-shadow: 0 0 20px 0 rgba(53, 46, 86, 0.1);
     background-color: #ffffff;
@@ -32,18 +31,3 @@ const Content = styled.div`
     position: relative;
     top: -1px;
 `;
-
-const Container = styled.div`
-    display: inline-block;
-`;
-
-const Panel = ({ children }: any) => (
-    <Container>
-        <Triangle />
-        <Content>
-            {children}
-        </Content>
-    </Container>
-);
-
-export default Panel;
