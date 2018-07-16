@@ -54,6 +54,31 @@ const Dark: Theme = {
             }
         }
     },
+
+    popover: {
+        background: {
+            color: 'darkgrey',
+        },
+        list: {
+            button: {
+                active: {
+                    color: 'white',
+                },
+                hover: {
+                    color: 'black',
+                },
+                disabled: {
+                    color: 'lightgrey',
+                },
+            },
+            title: {
+                color: 'white',
+            },
+            line: {
+                color: 'white',
+            },
+        },
+    }
 };
 
 export default Dark;
