@@ -12,7 +12,7 @@ interface Props {
     theme?: Theme;
 }
 
-export default styled.button`
+const Button = styled.button`
     background-color: ${(props: Props) => props.color || (props.theme as Theme).button.color.default};
 
     border-radius: ${props => props.radius || '100px'};
@@ -24,3 +24,5 @@ export default styled.button`
         background-color: ${(props: Props) => props.hover || (props.theme as Theme).button.color.hover}
     }
 `;
+
+export default Button;

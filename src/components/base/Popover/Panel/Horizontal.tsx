@@ -1,47 +1,39 @@
-import * as React from 'react';
 import styled from 'styled-components';
 
-const Triangle = styled.div`
-    height: 15px;
+export const Triangle = styled.div`
+    height: 18px;
+    width: 12px;
     position: relative;
     overflow: hidden;
 
     &:after {
         content: "";
         position: absolute;
-        width: 25px;
-        height: 25px;
+        width: 8px;
+        height: 8px;
         background: #ffffff;
         transform: rotate(45deg);
-        top: 5px;
-        left: 50%;
-        margin-left: -12px;
+        top: 50%;
+        left: 6px;
+        margin-top: -5px;
         box-shadow: 0 0 20px 0 rgba(53, 46, 86, 0.1);
         border: solid 1px rgba(183, 179, 204, 0.3);
 
         z-index: 1;
+
+        background: rgb(53, 46, 86);
     }
 `;
 
-const Panel = styled.div`
+export const Content = styled.div`
     border-radius: 5px;
     box-shadow: 0 0 20px 0 rgba(53, 46, 86, 0.1);
-    background-color: #ffffff;
     border: solid 1px rgba(183, 179, 204, 0.3);
 
     position: relative;
-    top: -1px;
-`;
+    left: -1px;
 
-const Container = styled.div`
-    display: inline-block;
-`;
+    background: rgb(53, 46, 86);
 
-export default ({ children }: any) => (
-    <Container>
-        <Triangle />
-        <Panel>
-            {children}
-        </Panel>
-    </Container>
-);
+    padding: 8px;
+`;

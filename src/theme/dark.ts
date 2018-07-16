@@ -34,6 +34,51 @@ const Dark: Theme = {
     panel: {
         color: 'darkgrey',
     },
+    
+    change: {
+        positive: {
+            color: 'lightgrey',
+        },
+        negative: {
+            color: 'darkgrey',
+        },
+    },
+
+    chart: {
+        tooltip: {
+            background: {
+                color: 'white',
+            },
+            value: {
+                color: 'grey',
+            }
+        }
+    },
+
+    popover: {
+        background: {
+            color: 'darkgrey',
+        },
+        list: {
+            button: {
+                active: {
+                    color: 'white',
+                },
+                hover: {
+                    color: 'black',
+                },
+                disabled: {
+                    color: 'lightgrey',
+                },
+            },
+            title: {
+                color: 'white',
+            },
+            line: {
+                color: 'white',
+            },
+        },
+    }
 };
 
 export default Dark;

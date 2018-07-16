@@ -31,4 +31,49 @@ export default interface Theme {
     text: {
         color: string;
     };
+
+    change: {
+        positive: {
+            color: string;
+        },
+        negative: {
+            color: string;
+        }
+    };
+
+    chart: {
+        tooltip: {
+            background: {
+                color: string;
+            },
+            value: {
+                color: string;
+            }
+        }
+    };
+
+    popover: {
+        background: {
+            color: string;
+        },
+        list: {
+            title: {
+                color: string;
+            },
+            button: {
+                active: {
+                    color: string;
+                };
+                hover: {
+                    color: string;
+                };
+                disabled: {
+                    color: string;
+                };
+            },
+            line: {
+                color: string;
+            },
+        }
+    };
 }
