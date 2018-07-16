@@ -57,9 +57,9 @@ export default interface Theme {
             color: string;
         },
         list: {
-            // title: {
-            //     color: string;
-            // },
+            title: {
+                color: string;
+            },
             button: {
                 active: {
                     color: string;
@@ -71,9 +71,9 @@ export default interface Theme {
                     color: string;
                 };
             },
-            // line: {
-            //     color: string;
-            // }
+            line: {
+                color: string;
+            },
         }
     };
 }

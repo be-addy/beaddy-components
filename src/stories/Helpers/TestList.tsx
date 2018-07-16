@@ -6,7 +6,7 @@ import Item from '../../components/Popover/List/Item';
 import Title from '../../components/Popover/List/Title';
 import Button from '../../components/Popover/List/Button';
 
-import Line from '../../components/base/Line';
+import Line from '../../components/Popover/List/Line';
 
 const TestList = () => (
     <List>

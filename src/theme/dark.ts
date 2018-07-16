@@ -62,7 +62,7 @@ const Dark: Theme = {
         list: {
             button: {
                 active: {
-                    color: '#ffffff',
+                    color: 'white',
                 },
                 hover: {
                     color: 'black',
@@ -70,6 +70,12 @@ const Dark: Theme = {
                 disabled: {
                     color: 'lightgrey',
                 },
+            },
+            title: {
+                color: 'white',
+            },
+            line: {
+                color: 'white',
             },
         },
     }

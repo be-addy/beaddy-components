@@ -60,6 +60,9 @@ const Light: Theme = {
             color: '#ffffff',
         },
         list: {
+            title: {
+                color: PRIMARY_COLOR,
+            },
             button: {
                 active: {
                     color: 'black',
@@ -71,6 +74,9 @@ const Light: Theme = {
                     color: 'grey',
                 },
             },
+            line: {
+                color: '#b7b3cd',
+            }
         },
     },
 };
