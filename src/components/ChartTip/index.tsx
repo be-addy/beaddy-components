@@ -18,10 +18,12 @@ interface Props {
     change: string;
     direction: Direction;
     visible: boolean;
+    x?: string;
+    y?: string;
 }
 
-const ChartTip = ({ provider, value, change, direction, visible }: Props) => (
-    <Menu visible={visible}>
+const ChartTip = ({ provider, value, change, direction, visible, x, y}: Props) => (
+    <Menu visible={visible} x={x} y={y}>
         <Panel>
             <Row>
                 <Provider type={provider} />

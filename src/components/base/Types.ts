@@ -6,4 +6,5 @@ export enum Direction {
 export enum ProviderType {
     TWITTER,
     FACEBOOK,
+    GOOGLE,
 }

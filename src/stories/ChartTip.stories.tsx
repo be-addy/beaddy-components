@@ -45,6 +45,7 @@ class ChartTipTest extends React.Component {
                                 >
                                     <option value={ProviderType.TWITTER}>Twitter</option>
                                     <option value={ProviderType.FACEBOOK}>Facebook</option>
+                                    <option value={ProviderType.GOOGLE}>Google</option>
                                 </select>
                             </td>
                         </tr>

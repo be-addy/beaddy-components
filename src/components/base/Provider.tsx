@@ -13,6 +13,10 @@ const Facebook = Twitter.extend`
     background-color: #5b31da;
 `;
 
+const Google = Twitter.extend`
+    background-color: #50e3c2;
+`;
+
 interface Props {
     type: ProviderType;
 }
@@ -26,6 +30,9 @@ const Provider = ({ type }: Props) => {
             break;
         case ProviderType.TWITTER:
             provider = <Twitter />;
+            break;
+        case ProviderType.GOOGLE:
+            provider = <Google />;
             break;
         default:
             throw 'Unknown provider type ' + type;
