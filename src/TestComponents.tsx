@@ -6,6 +6,7 @@ import { TextButtonDefault } from './stories/TextButton.stories';
 import { TextInputDefault } from './stories/TextInput.stories';
 import { ModalOkCancelDefault } from './stories/ModalOkCancel.stories';
 import { LineChartDefault } from './stories/LineChart.stories';
+import { DatePickerDefault } from './stories/DatePicker.stories';
 
 const COMPONENTS = [
     TextButtonDefault,
@@ -14,6 +15,7 @@ const COMPONENTS = [
     PopoverDefault,
     ChartTipDefault,
     LineChartDefault,
+    DatePickerDefault,
 ];
 
 const TestComponents = () => (
