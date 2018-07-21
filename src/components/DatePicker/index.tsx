@@ -1,28 +1,37 @@
 import * as React from 'react';
+import styled from 'styled-components';
 import MonthSwitch from './MonthSwitch';
 import Days from './Days';
 
-interface Date {
-    day: number;
-    month: number;
-    year: number;
-}
+import Date from './Date';
+export { default as Date} from './Date';
 
 interface Props {
-    date?: Date;
+    date: Date;
     onSelected: (date: Date) => void;
 }
+
+const Main = styled.div`
+    margin: 20px;
+`;
 
 class DatePicker extends React.Component<Props, Date> {
     constructor(props: Props) {
         super(props);
 
-        this.state = props.date || this.now();
+        this.state = props.date;
+    }
+
+    // tslint:disable
+    componentWillReceiveProps(props: Props) {
+        if (props.date) {
+            this.setState(props.date);
+        }
     }
 
     public render() {
         return (
-            <div>
+            <Main>
                 <MonthSwitch
                     month={this.state.month}
                     year={this.state.year}
@@ -31,26 +40,17 @@ class DatePicker extends React.Component<Props, Date> {
                     }
                 />
                 <Days
+                    selected={this.props.date}
                     month={this.state.month}
                     year={this.state.year}
                     onSelected={
-                        (day) => {
-                            this.setState({ day });
-                            this.props.onSelected(this.state);
+                        (date) => {
+                            this.props.onSelected(date);
                         }
                     }
                 />
-            </div>
+            </Main>
         );
-    }
-
-    private now() {
-        let date = new Date();
-        return {
-            day: date.getDate(),
-            month: date.getMonth(),
-            year: date.getFullYear(),
-        };
     }
 }
 

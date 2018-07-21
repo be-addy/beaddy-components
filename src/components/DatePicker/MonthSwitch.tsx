@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Button from './Button';
+import Text from './Text';
 
 import styled from 'styled-components';
 
@@ -20,6 +21,7 @@ export const Months = [
 
 const Main = styled.div`
     display: flex;
+    margin-bottom: 5px;
 `;
 
 const Content = styled.div`
@@ -38,7 +40,7 @@ class MonthSwitch extends React.Component<Props> {
         return (
             <Main>
                 <Button onClick={() => this.onChange(-1)}>&lt;</Button>
-                <Content>{Months[this.props.month]}, {this.props.year}</Content>
+                <Content><Text>{Months[this.props.month]}, {this.props.year}</Text></Content>
                 <Button onClick={() => this.onChange(1)}>&gt;</Button>
             </Main>
         );

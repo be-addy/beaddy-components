@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import Button from './Button';
+import CustomDate from './Date';
 
 const Row = styled.div`
     display: flex;
@@ -9,15 +10,21 @@ const Row = styled.div`
     justify-content: space-around;
 `;
 
+interface DayProps {
+    selected: boolean;
+}
+
 const Day = Button.extend`
     width: 24px;
+    ${(props: DayProps) => props.selected && 'font-weight: bold'};
 `;
 
 interface Props {
     month: number;
     year: number;
 
-    onSelected: (day: number) => void;
+    selected: CustomDate;
+    onSelected: (date: CustomDate) => void;
 }
 
 class Days extends React.Component<Props> {
@@ -60,7 +67,17 @@ class Days extends React.Component<Props> {
                 row.push((
                     <Day
                         key={index + 'day'}
-                        onClick={() => this.props.onSelected(day)}
+                        selected={this.props.selected.day === day
+                            && this.props.selected.month === this.props.month
+                            && this.props.selected.year === this.props.year}
+                        onClick={() =>
+                            this.props.onSelected(
+                                {
+                                    day,
+                                    month: this.props.month,
+                                    year: this.props.year
+                                }
+                            )}
                     >
                         {day > 0 ? day : ''}
                     </Day>)

@@ -27,7 +27,6 @@ class Dot extends React.Component<Props> {
 
     public render() {
         const { color, x, y, data } = this.props;
-        // tslint:disable
         return (
             <g>
                 <InnerCircle
