@@ -1,4 +1,4 @@
-import { Point, Provider, DataPoint } from './Types';
+import { ChartPoint, Provider } from './Types';
 import { DX, DY } from './Shift';
 
 class Scaler {
@@ -6,33 +6,33 @@ class Scaler {
     private width: number;
     private height: number;
 
-    private max: Point;
+    private xmax: number;
+    private ymax: number;
 
-    constructor(provider: Provider, max: Point, width: number, height: number) {
+    constructor(provider: Provider, ymax: number, width: number, height: number) {
         this.provider = provider;
         this.width = width;
         this.height = height;
 
-        this.max = max;
+        this.xmax = provider.data.length;
+        this.ymax = ymax;
     }
 
-    public scale(): Array<DataPoint> {
-        return this.provider.data.map(point => ({
-            x: this.getX(point.x), 
-            y: this.getY(point.y),
-            data: {
-                value: point.y,
-                provider: this.provider.type,
-            }
+    public scale(): Array<ChartPoint> {
+        return this.provider.data.map((point, i) => ({
+            x: this.getX(i), 
+            y: this.getY(point.value),
+            provider: this.provider.type,
+            ...point,
         }));
     }
 
     private getX(x: number) {
-        return (x / this.max.x * this.width) + DX;
+        return (x / this.xmax * this.width) + DX;
     }
 
     private getY(y: number) {
-        return this.height - (y / this.max.y * this.height) + DY;
+        return this.height - (y / this.ymax * this.height) + DY;
     }
 }
 

@@ -1,10 +1,12 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import MonthSwitch from './MonthSwitch';
+export { Months } from './MonthSwitch';
+
 import Days from './Days';
 
 import Date from './Date';
-export { default as Date} from './Date';
+export { default as Date } from './Date';
 
 interface Props {
     date: Date;
@@ -22,7 +24,6 @@ class DatePicker extends React.Component<Props, Date> {
         this.state = props.date;
     }
 
-    // tslint:disable
     componentWillReceiveProps(props: Props) {
         if (props.date) {
             this.setState(props.date);

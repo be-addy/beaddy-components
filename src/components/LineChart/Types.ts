@@ -1,23 +1,18 @@
 import { ProviderType } from '../base/Types';
 
 export interface Point {
+    date: Date;
+    value: number;
+}
+
+export interface ChartPoint extends Point {
+    provider: ProviderType;
     x: number;
     y: number;
 }
 
-export type Points = Array<Point>;
-
 export type Provider = {
     type: ProviderType,
     color: string,
-    data: Points,
-};
-
-export type DataPoint = {
-    x: number,
-    y: number,
-    data: {
-        value: number,
-        provider: ProviderType
-    }
+    data: Array<Point>,
 };

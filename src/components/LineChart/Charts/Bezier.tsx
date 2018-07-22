@@ -1,10 +1,15 @@
 import * as React from 'react';
-import { Point, DataPoint } from '../Types';
+import { ChartPoint } from '../Types';
 import Dot from './Dot';
+
+interface Point {
+    x: number;
+    y: number;
+}
 
 interface Props {
     color: string;
-    data: Array<DataPoint>;
+    data: Array<ChartPoint>;
     onMouseOver: (e: any) => void;
     onMouseOut: () => void;
 }
@@ -44,14 +49,14 @@ class Bezier extends React.Component<Props> {
         return { x, y };
     }
 
-    bezierCommand(point: Point, i: number, a: Array<DataPoint>) {
+    bezierCommand(point: Point, i: number, a: Array<ChartPoint>) {
         const cps = this.controlPoint(a[i - 1], a[i - 2], point);
 
         const cpe = this.controlPoint(point, a[i - 1], a[i + 1], true);
         return `C ${cps.x},${cps.y} ${cpe.x},${cpe.y} ${point.x},${point.y}`;
     }
 
-    svgPath(points: Array<DataPoint>) {
+    svgPath(points: Array<ChartPoint>) {
         const d = points.reduce(
             (acc, point, i, a) => {
                 return i === 0

@@ -18,7 +18,7 @@ class LineChartTest extends React.Component {
         const data = Providers.map(provider => ({
             type: provider.type,
             color: provider.color,
-            data: this.createFakeData(),
+            data: this.createFakeData(new Date(2017, 9, 22)),
         }));
 
         return (
@@ -26,14 +26,21 @@ class LineChartTest extends React.Component {
         );
     }
 
-    private createFakeData(scale: number = 200000) {
+    private createFakeData(start: Date, scale: number = 200000) {
         const shift = 100000;
         const data = [];
-        for (let x = 0; x <= 10; x++) {
+        let date = start;
+        let end = new Date(start);
+        end.setDate(end.getDate() + 10);
+
+        while (date < end) {
             const random = Math.random();
-            const temp: any = data.length > 0 ? data[data.length - 1].y : scale;
-            const y = random >= .45 ? temp + Math.floor(random * shift) : temp - Math.floor(random * shift);
-            data.push({ x, y });
+            const temp: any = data.length > 0 ? data[data.length - 1].value : scale;
+            const value = random >= .45 ? temp + Math.floor(random * shift) : temp - Math.floor(random * shift);
+            data.push({ date, value });
+
+            date = new Date(date);
+            date.setDate(date.getDate() + 1);
         }
 
         return data;

@@ -1,14 +1,15 @@
 import * as React from 'react';
-import { Point } from './Types';
 import { DX, DY, MarginBottom } from './Shift';
 
+import { Months } from '../DatePicker';
+
 interface Props {
+    dates: Array<Date>;
+
     width: number;
     height: number;
-    limits: {
-        min: Point,
-        max: Point,
-    };
+
+    maxValue: number;
 }
 
 class Axis extends React.Component<Props> {
@@ -17,14 +18,13 @@ class Axis extends React.Component<Props> {
     }
 
     private vmarks() {
-        const { height, limits } = this.props;
+        const { height, maxValue } = this.props;
 
         const NotchCount = 3;
 
-        const maxVal = limits.max.y;
-        const dVal = Math.floor((maxVal / (NotchCount + 1)) / 10000) * 10000;
+        const dVal = Math.floor((maxValue / (NotchCount + 1)) / 10000) * 10000;
 
-        const k = height / maxVal;
+        const k = height / maxValue;
         const dY = k * dVal;
 
         let val = 0;
@@ -42,22 +42,33 @@ class Axis extends React.Component<Props> {
     }
 
     private hmarks() {
-        const { height, width, limits } = this.props;
+        const { height, width, dates } = this.props;
 
-        const NotchCount = limits.max.x - limits.min.x;
+        const NotchCount = dates.length;
         const dX = Math.floor(width / NotchCount);
 
-        let val = limits.min.x;
+        let index = 0;
         let x = 0;
 
         let comps: any = [];
         for (let i = 0; i < NotchCount; ++i) {
-            comps.push(<text key={i} x={x + DX} y={height + (DY + MarginBottom)}>{val}</text>);
-            val += 1;
+            comps.push(
+                <text
+                    key={i}
+                    x={x + DX}
+                    y={height + (DY + MarginBottom) - 3}
+                >
+                    {dates[index].getDate()} {this.getMonthName(dates[index].getMonth())}
+                </text>);
+            index += 1;
             x += dX;
         }
 
         return comps;
+    }
+
+    private getMonthName(index: number) {
+        return Months[index].substr(0, 3).toLowerCase();
     }
 
     private makeAxis() {

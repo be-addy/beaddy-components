@@ -1,13 +1,12 @@
 import * as React from 'react';
 import Scaler from './Scaler';
-import { getMin, getMax } from './Limits';
 import Axis from './Axis';
 
 import Bezier from './Charts/Bezier';
 
 import { DY, DX, MarginRight, MarginBottom } from './Shift';
 
-import { Provider, Points, DataPoint } from './Types';
+import { Provider, ChartPoint } from './Types';
 
 import { ProviderType, Direction } from '../base/Types';
 import ChartTip from '../ChartTip';
@@ -35,18 +34,21 @@ class Chart extends React.Component<Props> {
         const w = width - (DX + MarginRight);
         const h = height - (DY + MarginBottom);
 
-        const limits = this.getLimits();
+        const maxValue = this.getMaxValue();
+        const dates = data[0].data.map(point => point.date);
+
         return (
             <div style={{ position: 'relative' }}>
                 {this.chartTip()}
                 <svg width={width} height={height}>
                     {
                         data.map((provider, i) => {
-                            let scaler = new Scaler(provider, limits.max, w, h);
+                            let scaler = new Scaler(provider, maxValue, w, h);
                             let scaledData = scaler.scale();
+
                             return <Bezier
                                 key={i}
-                                onMouseOver={(e: DataPoint) => this.setState(this.getState(e))}
+                                onMouseOver={(e: ChartPoint) => this.setState(this.getState(e))}
                                 onMouseOut={() => this.setState({ visible: false })}
                                 color={provider.color}
                                 data={scaledData}
@@ -54,7 +56,7 @@ class Chart extends React.Component<Props> {
                         })
                     }
 
-                    <Axis width={w} height={h} limits={limits} />
+                    <Axis dates={dates} width={w} height={h} maxValue={maxValue} />
                 </svg>
             </div>
         );
@@ -68,12 +70,12 @@ class Chart extends React.Component<Props> {
         );
     }
 
-    private getState(e: DataPoint) {
-        const { x, y, data: { value, provider }} = e;
+    private getState(e: ChartPoint) {
+        const { x, y, value, provider } = e;
         const { data } = this.props;
 
         let providerData = data.find(d => d.type === provider);
-        let startValue = (providerData as any).data[0].y;
+        let startValue = (providerData as any).data[0].value;
 
         let change = value - startValue;
 
@@ -88,21 +90,26 @@ class Chart extends React.Component<Props> {
         };
     }
 
-    private getLimits() {
+    private getMaxValue() {
         const { data } = this.props;
 
-        let mins: Points = [];
-        let maxs: Points = [];
+        let maxValue = 0;
 
         data.forEach(provider => {
-            mins.push(getMin(provider.data));
-            maxs.push(getMax(provider.data));
+            let maxProviderValue = provider.data
+                .map(d => d.value)
+                .reduce(
+                    (max: number, value: number) =>
+                        value > max
+                            ? value
+                            : max,
+                    provider.data[0].value
+                );
+
+            maxValue = Math.max(maxValue, maxProviderValue);
         });
 
-        return {
-            min: getMin(mins),
-            max: getMax(maxs),
-        };
+        return maxValue;
     }
 }
 

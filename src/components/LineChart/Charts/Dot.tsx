@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import { DataPoint } from '../Types';
+import { ChartPoint } from '../Types';
 
 const InnerCircle = styled.circle`
     stroke: ${props => props.color};
@@ -14,7 +14,7 @@ const OuterCircle = styled.circle`
     pointer-events: all;
 `;
 
-interface Props extends DataPoint {
+interface Props extends ChartPoint {
     color: string;
     onMouseOver: (e: any) => void;
     onMouseOut: () => void;
@@ -26,7 +26,7 @@ class Dot extends React.Component<Props> {
     };
 
     public render() {
-        const { color, x, y, data } = this.props;
+        const { color, x, y, value, date, provider } = this.props;
         return (
             <g>
                 <InnerCircle
@@ -42,7 +42,7 @@ class Dot extends React.Component<Props> {
                     r={10}
                     onMouseOver={(e) => {
                         this.setState({ hover: true });
-                        this.props.onMouseOver({x, y, data});
+                        this.props.onMouseOver({x, y, value, date, provider});
                     }}
                     onMouseOut={(e) => {
                         this.setState({ hover: false });
