@@ -1,5 +1,4 @@
 import * as React from 'react';
-import log from '../log';
 
 import { storiesOf } from '@storybook/react';
 
@@ -7,11 +6,19 @@ import DatePicker from '../components/DatePicker';
 
 const stories = storiesOf('DatePicker', module);
 
-export const DatePickerDefault = (
-    <DatePicker
-        date={{ day: 1, month: 1, year: 1999 }}
-        onSelected={(date) => log(date)}
-    />
-);
+class DatePickerTest extends React.Component {
+    state = {
+        date: { day: 1, month: 1, year: 1999 },
+    };
 
-stories.add('default', () => DatePickerDefault);
+    public render() {
+        return (
+            <DatePicker
+                date={this.state.date}
+                onSelected={(date) => this.setState({date})}
+            />
+        );
+    }
+}
+
+stories.add('default', () => <DatePickerTest />);

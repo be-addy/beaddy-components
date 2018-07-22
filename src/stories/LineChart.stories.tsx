@@ -12,7 +12,8 @@ class LineChartTest extends React.Component {
         const Providers = [
             { type: ProviderType.TWITTER, color: '#53acf0' },
             { type: ProviderType.FACEBOOK, color: '#5b31da' },
-            { type: ProviderType.GOOGLE, color: '#50e3c2' }
+            { type: ProviderType.GOOGLE, color: '#50e3c2' },
+            { type: ProviderType.APPNEXUS, color: '#352E56' },
         ];
 
         const data = Providers.map(provider => ({

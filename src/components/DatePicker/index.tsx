@@ -14,6 +14,7 @@ interface Props {
 }
 
 const Main = styled.div`
+    display: inline-block;
     margin: 20px;
 `;
 
