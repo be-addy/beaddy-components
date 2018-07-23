@@ -5,6 +5,8 @@ import { ChartTipDefault } from './stories/ChartTip.stories';
 import { TextButtonDefault } from './stories/TextButton.stories';
 import { TextInputDefault } from './stories/TextInput.stories';
 import { ModalOkCancelDefault } from './stories/ModalOkCancel.stories';
+import { LineChartDefault } from './stories/LineChart.stories';
+import { DateRangeDefault } from './stories/DateRange.stories';
 
 const COMPONENTS = [
     TextButtonDefault,
@@ -12,6 +14,8 @@ const COMPONENTS = [
     TextInputDefault,
     PopoverDefault,
     ChartTipDefault,
+    LineChartDefault,
+    DateRangeDefault,
 ];
 
 const TestComponents = () => (
