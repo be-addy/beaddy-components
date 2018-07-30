@@ -7,6 +7,7 @@ import { TextInputDefault } from './stories/TextInput.stories';
 import { ModalOkCancelDefault } from './stories/ModalOkCancel.stories';
 import { LineChartDefault } from './stories/LineChart.stories';
 import { DateRangeDefault } from './stories/DateRange.stories';
+import { CircularSliderDefault } from './stories/CircularSlider.stories';
 
 const COMPONENTS = [
     TextButtonDefault,
@@ -16,6 +17,7 @@ const COMPONENTS = [
     ChartTipDefault,
     LineChartDefault,
     DateRangeDefault,
+    CircularSliderDefault,
 ];
 
 const TestComponents = () => (
