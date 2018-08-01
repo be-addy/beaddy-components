@@ -33,17 +33,19 @@ export class DateRangeTest extends React.Component<Props, State> {
         log('state', this.state);
 
         return (
-            <Popover visible={true}>
-                <DateRange
-                    mode={this.state.mode}
-                    start={this.state.start}
-                    end={this.state.end}
-                    launch={{ day: 5, month: 9, year: 2014 }}
-                    onStartSelected={(start) => { log('Start', start); this.setState({ start }); }}
-                    onEndSelected={(end) => { log('End', end); this.setState({ end }); }}
-                    onModeChanged={(mode) => { log('mode', mode); this.setState({ mode }); }}
-                />
-            </Popover>
+            <div style={{ position: 'relative', width: 420, height: 200 }}>
+                <Popover visible={true}>
+                    <DateRange
+                        mode={this.state.mode}
+                        start={this.state.start}
+                        end={this.state.end}
+                        launch={{ day: 5, month: 9, year: 2014 }}
+                        onStartSelected={(start) => { log('Start', start); this.setState({ start }); }}
+                        onEndSelected={(end) => { log('End', end); this.setState({ end }); }}
+                        onModeChanged={(mode) => { log('mode', mode); this.setState({ mode }); }}
+                    />
+                </Popover>
+            </div>
         );
     }
 }

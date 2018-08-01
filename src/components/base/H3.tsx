@@ -8,10 +8,10 @@ interface Props {
     theme?: Theme;
 }
 
-const Header = styled.span`
+const Header = styled.div`
     font-family: ${(props: Props) => props.font || (props.theme as Theme).font};
-    color: ${(props: Props) => props.color || (props.theme as Theme).header.color};
-    font-size: 24px;
+    color: ${(props: Props) => props.color || (props.theme as Theme).h3.color};
+    font-size: 20px;
 `;
 
 export default Header;

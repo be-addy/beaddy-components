@@ -6,7 +6,7 @@ import {
     Width,
     ThumbStroke,
     ThumbRadius
-} from '../Const';
+} from '../const';
 
 const Svg = styled.svg`
     transform: rotate(-90deg);

@@ -20,10 +20,14 @@ const COMPONENTS = [
     CircularSliderDefault,
 ];
 
-const TestComponents = () => (
-    <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-        {COMPONENTS.map((c, i) => <div style={{ margin: '10px' }} key={i}>{c}</div>)}
-    </div>
-);
+class TestComponents extends React.Component {
+    public render() {
+        return (
+            <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+                {COMPONENTS.map((c, i) => <div style={{ margin: '10px' }} key={i}>{c}</div>)}
+            </div>
+        );
+    }
+}
 
 export default TestComponents;

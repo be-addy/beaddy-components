@@ -1,6 +1,7 @@
 import Theme from './';
 
 const PRIMARY_COLOR = 'grey';
+const HEADER_COLOR = 'white';
 
 const Dark: Theme = {
     font: 'Arial',
@@ -15,8 +16,12 @@ const Dark: Theme = {
         }
     },
 
-    header: {
-        color: 'white',
+    h2: {
+        color: HEADER_COLOR,
+    },
+
+    h3: {
+        color: HEADER_COLOR,
     },
 
     title: {

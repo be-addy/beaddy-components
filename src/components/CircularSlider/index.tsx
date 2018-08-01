@@ -6,7 +6,7 @@ import {
     Radius,
     ThumbRadius,
     ThumbStroke
-} from './Const';
+} from './const';
 
 import Props from './Props';
 import Drawing from './Drawing';

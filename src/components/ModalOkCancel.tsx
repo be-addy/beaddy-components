@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import TextButton from './TextButton';
 import Panel from './base/Panel';
-import Header from './base/Header';
+import Header from './base/H2';
 import Row from './base/Row';
 import Text from './base/Modal/Text';
 

@@ -19,15 +19,16 @@ class ChartTipTest extends React.Component {
     public render() {
         const { provider, value, change, direction } = this.state;
         return (
-            <div>
-                <ChartTip
-                    visible={true}
-                    provider={provider}
-                    value={value}
-                    change={change}
-                    direction={direction}
-                />
-
+            <>
+                <div style={{ position: 'relative', width: 200, height: 40 }}>
+                    <ChartTip
+                        visible={true}
+                        provider={provider}
+                        value={value}
+                        change={change}
+                        direction={direction}
+                    />
+                </div>
                 <table>
                     <tbody>
                         <tr>
@@ -105,7 +106,7 @@ class ChartTipTest extends React.Component {
                         </tr>
                     </tbody>
                 </table>
-            </div>
+            </>
         );
     }
 }

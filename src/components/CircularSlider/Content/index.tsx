@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 import Title from '../../base/Title';
-import Header from '../../base/Header';
+import Header from '../../base/H2';
 import Lock from '../../base/Lock';
 
 import Item from './Item';

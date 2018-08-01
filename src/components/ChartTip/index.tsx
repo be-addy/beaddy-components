@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import Row from '../base/Row';
 
-import Menu from '../base/Popover/Menu';
+import Menu from '../base/Popover';
 import Value from './Value';
 import Change from './Change';
 
@@ -22,14 +22,16 @@ interface Props {
     y?: string;
 }
 
-const ChartTip = ({ provider, value, change, direction, visible, x, y}: Props) => (
+const ChartTip = ({ provider, value, change, direction, visible, x, y }: Props) => (
     <Menu visible={visible} x={x} y={y}>
         <Panel>
             <Row>
                 <Provider type={provider} />
                 <Value>{value}</Value>
                 <Change direction={direction}>{change}</Change>
-                <Arrow direction={direction} />
+                <div style={{ width: 10, height: 20 }}>
+                    <Arrow direction={direction} />
+                </div>
             </Row>
         </Panel>
     </Menu>
