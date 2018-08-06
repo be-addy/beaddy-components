@@ -8,7 +8,7 @@ interface Props {
     theme?: Theme;
 }
 
-const Text = styled.span`
+const Text = styled.div`
     font-family: ${(props: Props) => props.font || (props.theme as Theme).font};
     color: ${(props: Props) => props.color || (props.theme as Theme).text.color};
     font-size: 14px;

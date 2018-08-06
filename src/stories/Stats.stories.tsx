@@ -2,10 +2,10 @@ import * as React from 'react';
 
 import { storiesOf } from '@storybook/react';
 
-import SidePanel from '../components/SidePanel';
+import SidePanel from '../components/Stats';
 import { ProviderType, Direction } from '../components/base/Types';
 
-const stories = storiesOf('SidePanel', module);
+const stories = storiesOf('Stats', module);
 
 const data = {
     conversions: [
@@ -30,7 +30,7 @@ const data = {
     ],
 };
 
-class SidePanelDefault extends React.Component {
+class StatsDefault extends React.Component {
     state = {
         index: 0,
     };
@@ -47,4 +47,4 @@ class SidePanelDefault extends React.Component {
     }
 }
 
-stories.add('default', () => <SidePanelDefault />);
+stories.add('default', () => <StatsDefault />);

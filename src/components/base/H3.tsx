@@ -1,17 +1,7 @@
-import styled from 'styled-components';
-import Theme from '../../theme';
+import Text from './Text';
 
-interface Props {
-    font?: string;
-    color?: string;
-
-    theme?: Theme;
-}
-
-const Header = styled.div`
-    font-family: ${(props: Props) => props.font || (props.theme as Theme).font};
-    color: ${(props: Props) => props.color || (props.theme as Theme).h3.color};
+const H3 = Text.extend`
     font-size: 20px;
 `;
 
-export default Header;
+export default H3;

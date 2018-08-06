@@ -9,6 +9,7 @@ interface Props {
 
 const Up = ({ theme }: Props) => (
     <svg
+        style={{ display: 'block' }}
         viewBox="0 0 10 10"
         fill={theme.change.positive.color}
     >

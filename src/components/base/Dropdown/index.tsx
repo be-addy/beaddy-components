@@ -42,7 +42,11 @@ class SidePanelPopover extends React.Component<Props> {
                     onClick={() => this.setState({ visible: !this.state.visible })}
                     onBlur={() => this.setState({ visible: false })}
                 >
-                    <Text>{options[index]}</Text><Down />
+                    <div style={{ display: 'flex' }}>
+                        <Text>{options[index]}</Text>
+                        <div style={{ flex: '1' }} />
+                        <Down />
+                    </div>
                     <div style={{ position: 'relative', top: 16, width: 152 }}>
                         <Popover visible={this.state.visible}>
                             <List>

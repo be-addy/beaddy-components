@@ -1,7 +1,6 @@
 import Theme from './';
 
 const PRIMARY_COLOR = '#5b31da';
-const HEADER_COLOR = '#352e56';
 
 const Light: Theme = {
     font: 'Muli',
@@ -24,16 +23,8 @@ const Light: Theme = {
         color: PRIMARY_COLOR,
     },
 
-    h2: {
-        color: HEADER_COLOR,
-    },
-
-    h3: {
-        color: HEADER_COLOR,
-    },
-
     text: {
-        color: 'rgba(53, 46, 86, 0.6)',
+        color: '#352e56',
     },
 
     panel: {

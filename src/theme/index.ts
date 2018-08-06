@@ -24,14 +24,6 @@ export default interface Theme {
         color: string,
     };
 
-    h2: {
-        color: string;
-    };
-
-    h3: {
-        color: string;
-    };
-
     text: {
         color: string;
     };
