@@ -7,6 +7,7 @@ import { TextInputDefault } from './stories/TextInput.stories';
 import { ModalOkCancelDefault } from './stories/ModalOkCancel.stories';
 import { LineChartDefault } from './stories/LineChart.stories';
 import { DateRangeDefault } from './stories/DateRange.stories';
+import { CircularSliderDefault } from './stories/CircularSlider.stories';
 
 const COMPONENTS = [
     TextButtonDefault,
@@ -16,12 +17,17 @@ const COMPONENTS = [
     ChartTipDefault,
     LineChartDefault,
     DateRangeDefault,
+    CircularSliderDefault,
 ];
 
-const TestComponents = () => (
-    <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-        {COMPONENTS.map((c, i) => <div style={{ margin: '10px' }} key={i}>{c}</div>)}
-    </div>
-);
+class TestComponents extends React.Component {
+    public render() {
+        return (
+            <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+                {COMPONENTS.map((c, i) => <div style={{ margin: '10px' }} key={i}>{c}</div>)}
+            </div>
+        );
+    }
+}
 
 export default TestComponents;

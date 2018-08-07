@@ -15,10 +15,6 @@ const Dark: Theme = {
         }
     },
 
-    header: {
-        color: 'white',
-    },
-
     title: {
         color: PRIMARY_COLOR,
     },

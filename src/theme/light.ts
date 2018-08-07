@@ -23,12 +23,8 @@ const Light: Theme = {
         color: PRIMARY_COLOR,
     },
 
-    header: {
-        color: '#352e56',
-    },
-
     text: {
-        color: 'rgba(53, 46, 86, 0.6)',
+        color: '#352e56',
     },
 
     panel: {

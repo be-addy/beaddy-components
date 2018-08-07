@@ -19,16 +19,18 @@ class PopoverTest extends React.Component {
 
     render() {
         return (
-            <div>
+            <>
                 <div>
                     <Button onClick={this.toggle}>Toggle</Button>
                     <Button onMouseOver={this.show} onMouseOut={this.hide}>Hover</Button>
                     <Button onClick={this.toggle} onBlur={this.hide}>Focus</Button>
                 </div>
-                <Popover visible={this.state.visible}>
-                    <PopoverTestList />
-                </Popover>
-            </div>
+                <div style={{ position: 'relative', width: 200, height: 200 }}>
+                    <Popover visible={this.state.visible}>
+                        <PopoverTestList />
+                    </Popover>
+                </div>
+            </>
         );
     }
 

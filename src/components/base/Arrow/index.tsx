@@ -11,8 +11,10 @@ interface Props {
     theme?: Theme;
 }
 
-const Arrow = (props: Props) => {
-    return props.direction === Direction.UP ? <Up /> : <Down />;
+const Arrow = ({ direction }: Props) => {
+    return direction === Direction.UP
+        ? <Up />
+        : <Down />;
 };
 
 export default withTheme(Arrow);

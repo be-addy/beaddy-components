@@ -2,12 +2,12 @@ import styled, { css } from 'styled-components';
 
 const Hidden = css`
     opacity: 0;
-    visibility: hidden;
+    display: none;
 `;
 
 const Visible = css`
     opacity: 1;
-    visibility: visible;
+    display: block;
 `;
 
 interface Props {
@@ -17,7 +17,7 @@ interface Props {
 }
 
 const Menu = styled.div`
-    position: relative;
+    position: absolute;
     ${(props: Props) => props.visible ? Visible : Hidden};
     transition: visibility 0.5s;
     left: ${(props: Props) => props.x || 0};

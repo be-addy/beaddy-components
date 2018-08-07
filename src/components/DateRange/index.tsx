@@ -27,10 +27,11 @@ const Row = styled.div`
     display: flex;
 `;
 
-// tslint:disable
 class DateRange extends React.Component<Props> {
     constructor(props: Props) {
         super(props);
+
+        this.setRange(props);
     }
 
     componentWillReceiveProps(props: Props) {
@@ -38,35 +39,7 @@ class DateRange extends React.Component<Props> {
             return;
         }
 
-        switch (props.mode) {
-            case Mode.SinceLaunch:
-                let start = props.launch;
-                let end = Utils.getNow();
-                props.onStartSelected(start);
-                props.onEndSelected(end);
-                break;
-            case Mode.ThisWeek:
-                start = Utils.getFirstDayOfTheWeek();
-                end = Utils.getLastDayOfTheWeek();
-                props.onStartSelected(start);
-                props.onEndSelected(end);
-                break;
-            case Mode.ThisMonth:
-                start = Utils.getFirstDayOfTheMonth();
-                end = Utils.getNow();
-                props.onStartSelected(start);
-                props.onEndSelected(end);
-                break;
-            case Mode.ThisYear:
-                start = Utils.getFirstDayOfTheYear();
-                end = Utils.getNow();
-                props.onStartSelected(start);
-                props.onEndSelected(end);
-                break;
-            default:
-                console.log('default', props.mode);
-            // throw 'Unknown mode';
-        }
+        this.setRange(props);
     }
 
     public render() {
@@ -95,6 +68,37 @@ class DateRange extends React.Component<Props> {
                 />
             </div>
         );
+    }
+
+    private setRange(props: Props): void {
+        let start;
+        let end;
+
+        switch (props.mode) {
+            case Mode.SinceLaunch:
+                start = props.launch;
+                end = Utils.getNow();
+                break;
+            case Mode.ThisWeek:
+                start = Utils.getFirstDayOfTheWeek();
+                end = Utils.getLastDayOfTheWeek();
+                break;
+            case Mode.ThisMonth:
+                start = Utils.getFirstDayOfTheMonth();
+                end = Utils.getNow();
+                break;
+            case Mode.ThisYear:
+                start = Utils.getFirstDayOfTheYear();
+                end = Utils.getNow();
+                break;
+            case Mode.Custom:
+                return;
+            default:
+                throw 'Unknown mode ' + props.mode;
+        }
+
+        props.onStartSelected(start);
+        props.onEndSelected(end);
     }
 }
 

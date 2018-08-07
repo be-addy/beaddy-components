@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import Menu from '../base/Popover/Menu';
+import Menu from '../base/Popover';
 import Panel from './Panel';
 
 interface Props {
