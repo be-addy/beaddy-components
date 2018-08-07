@@ -23,6 +23,11 @@ interface Props {
     hidden: boolean;
 }
 
+const Cards = Padding.extend`
+    height: 440px;
+    overflow-y: scroll;
+`;
+
 const Left = 28;
 class CardList extends React.Component<Props> {
     public render() {
@@ -33,7 +38,7 @@ class CardList extends React.Component<Props> {
                     <Dropdown {...dropdownData} index={index} onSelected={(i) => onSelected(i)} />
                 </Padding>
                 <Line />
-                <Padding top={20} bottom={32}>
+                <Cards top={20} bottom={32}>
                     <Padding bottom={16} left={Left}>
                         <Row>
                             <H3>Activities</H3>
@@ -45,7 +50,7 @@ class CardList extends React.Component<Props> {
                             <Card onClose={(id) => onClose(id)} {...c} />
                         </Padding>
                     ))}
-                </Padding>
+                </Cards>
             </SidePanel>
         );
     }
