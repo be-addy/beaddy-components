@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { css } from 'styled-components';
-import Col from '../base/Col';
 
 import { Triangle as BaseTriangle, Content as BaseContent } from '../base/Popover/Panel/Vertical';
 import Theme from '../../theme';
@@ -24,12 +23,12 @@ const Content = BaseContent.extend`
 `;
 
 const Panel = ({ children }: any) => (
-    <Col>
+    <>
         <Triangle />
         <Content>
             {children}
         </Content>
-    </Col>
+    </>
 );
 
 export default Panel;

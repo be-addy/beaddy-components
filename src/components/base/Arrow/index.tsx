@@ -1,20 +1,19 @@
 import * as React from 'react';
 import { withTheme } from 'styled-components';
 import { Direction } from '../Types';
-import Theme from '../../../theme';
 
 import Up from './Up';
 import Down from './Down';
+import BaseProps from './Props';
 
-interface Props {
+interface Props extends BaseProps {
     direction: Direction;
-    theme?: Theme;
 }
 
-const Arrow = ({ direction }: Props) => {
+const Arrow = ({ direction, width, height }: Props) => {
     return direction === Direction.UP
-        ? <Up />
-        : <Down />;
+        ? <Up width={width} height={height} />
+        : <Down width={width} height={height} />;
 };
 
 export default withTheme(Arrow);

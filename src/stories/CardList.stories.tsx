@@ -97,7 +97,7 @@ class CardListDefault extends React.Component {
                 onClose={(id) => this.remove(id)}
                 index={this.state.index}
                 onSelected={(index) => this.setState({ index })}
-                popover={popover}
+                dropdownData={popover}
                 hidden={false}
             />
         );

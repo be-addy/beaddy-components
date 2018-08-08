@@ -29,9 +29,7 @@ const ChartTip = ({ provider, value, change, direction, visible, x, y }: Props) 
                 <Provider type={provider} />
                 <Value>{value}</Value>
                 <Change direction={direction}>{change}</Change>
-                <div style={{ width: 10, height: 10 }}>
-                    <Arrow direction={direction} />
-                </div>
+                <Arrow width={10} height={10} direction={direction} />
             </Row>
         </Panel>
     </Menu>

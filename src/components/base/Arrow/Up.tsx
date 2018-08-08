@@ -1,14 +1,12 @@
 import * as React from 'react';
 import { withTheme } from 'styled-components';
 
-import Theme from '../../../theme';
+import Props from './Props';
 
-interface Props {
-    theme: Theme;
-}
-
-const Up = ({ theme }: Props) => (
+const Up = ({ width, height, theme }: Props) => (
     <svg
+        width={width}
+        height={height}
         style={{ display: 'block' }}
         viewBox="0 0 10 10"
         fill={theme.change.positive.color}

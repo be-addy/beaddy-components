@@ -1,10 +1,18 @@
 import * as React from 'react';
-import styled from 'styled-components';
 
-import Text from '../../base/Text';
-import Arrow from '../../base/Arrow';
-import { Direction } from '../../base/Types';
+import Row from '../../base/Row';
 import Line from '../../base/Line';
+import Text from '../../base/Text';
+import Title from '../../base/Title';
+import Arrow from '../../base/Arrow';
+import Column from '../../base/Column';
+import Padding from '../../base/Padding';
+import { Direction } from '../../base/Types';
+
+const Value = Title.extend`
+  font-size: 20px;
+  font-weight: normal;
+`;
 
 export interface ExtraData {
     title: string;
@@ -13,49 +21,28 @@ export interface ExtraData {
     direction: Direction;
 }
 
-const Title = styled.div`
-  font-family: Muli;
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 1px;
-  color: #5b31da;
-`;
-
-const Value = styled.div`
-  font-family: Muli;
-  font-size: 20px;
-  color: #5b31da;
-`;
-
-const Row = styled.div`
-    display: flex;
-    align-items: center;
-`;
-
-const Padding = styled.div`
-    padding: 0 0 4px 0;
-`;
-
 class Extra extends React.Component<ExtraData> {
     public render() {
         const { title, value, change, direction } = this.props;
         return (
-            <div style={{ padding: '8px 0 8px 0' }}>
+            <Padding top={8} bottom={8}>
                 <Line />
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '8px 0 8px 0' }}>
-                    <Padding><Title>{title}</Title></Padding>
-                    <Padding><Value>{value.toFixed(3)}</Value></Padding>
-                    <Padding>
-                        <Row>
-                            <Text>{change}</Text>
-                            <div style={{ width: 14, height: 14, paddingLeft: 2 }}>
-                                <Arrow direction={direction} />
-                            </div>
-                        </Row>
-                    </Padding>
-                </div>
+                <Padding top={8} bottom={8}>
+                    <Column>
+                        <Padding bottom={4}><Title>{title}</Title></Padding>
+                        <Padding bottom={4}><Value>{value.toFixed(3)}</Value></Padding>
+                        <Padding bottom={4}>
+                            <Row>
+                                <Text>{change}</Text>
+                                <Padding left={2}>
+                                    <Arrow width={14} height={14} direction={direction} />
+                                </Padding>
+                            </Row>
+                        </Padding>
+                    </Column>
+                </Padding>
                 <Line />
-            </div>
+            </Padding>
         );
     }
 }

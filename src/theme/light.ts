@@ -24,7 +24,17 @@ const Light: Theme = {
     },
 
     text: {
-        color: '#352e56',
+        color: {
+            default: '#352e56',
+            highlight: '#ffffff'
+        },
+    },
+
+    link: {
+        color: {
+            default: '#5b31da',
+            highlight: '#ffffff',
+        },
     },
 
     panel: {
@@ -73,6 +83,12 @@ const Light: Theme = {
             line: {
                 color: '#b7b3cd',
             }
+        },
+    },
+
+    circularSlider: {
+        background: {
+            color: '#ffffff',
         },
     },
 };

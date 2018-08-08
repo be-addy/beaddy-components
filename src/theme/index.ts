@@ -25,7 +25,17 @@ export default interface Theme {
     };
 
     text: {
-        color: string;
+        color: {
+            default: string,
+            highlight: string,
+        },
+    };
+
+    link: {
+        color: {
+            default: string,
+            highlight: string,
+        },
     };
 
     change: {
@@ -71,5 +81,11 @@ export default interface Theme {
                 color: string;
             },
         }
+    };
+
+    circularSlider: {
+        background: {
+            color: string;
+        },
     };
 }

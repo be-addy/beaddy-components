@@ -1,25 +1,17 @@
 import * as React from 'react';
-import styled from 'styled-components';
+
 import H3 from '../base/H3';
-
 import Line from '../base/Line';
-
-import Conversions, { ConversionData } from './Conversions';
-import Dropdown, { PopoverData } from '../base/Dropdown';
-import Providers, { ProviderData } from './Providers';
+import Padding from '../base/Padding';
 import SidePanel from '../base/SidePanel';
+import Dropdown, { DropdownData } from '../base/Dropdown';
 
-const Padding = styled.div`
-    padding: 16px 0 16px 48px;
-`;
-
-const HeaderPadding = Padding.extend`
-    padding-top: 32px;
-`;
+import Providers, { ProviderData } from './Providers';
+import Conversions, { ConversionData } from './Conversions';
 
 interface Props {
     conversions: Array<ConversionData>;
-    popover: PopoverData;
+    dropdownData: DropdownData;
     providers: Array<ProviderData>;
 
     index: number;
@@ -28,28 +20,25 @@ interface Props {
     hidden: boolean;
 }
 
-const PaddingDropdown = Padding.extend`
-    padding-right: 64px;
-`;
-
+const Left = 48;
 class Stats extends React.Component<Props> {
     public render() {
-        const { conversions, providers, popover, index, onSelected } = this.props;
+        const { conversions, providers, dropdownData, index, onSelected } = this.props;
         return (
             <SidePanel hidden={this.props.hidden}>
-                <HeaderPadding>
+                <Padding top={32} bottom={16} left={Left}>
                     <H3>Web Conversions</H3>
-                </HeaderPadding>
+                </Padding>
                 <Line />
-                <Padding>
+                <Padding top={16} bottom={16} left={Left}>
                     <Conversions data={conversions} />
                 </Padding>
                 <Line />
-                <PaddingDropdown>
-                    <Dropdown {...popover} index={index} onSelected={(i) => onSelected(i)} />
-                </PaddingDropdown>
+                <Padding  top={16} right={64} bottom={16} left={Left}>
+                    <Dropdown {...dropdownData} index={index} onSelected={(i) => onSelected(i)} />
+                </Padding>
                 <Line />
-                <Padding>
+                <Padding top={16} bottom={16} left={Left}>
                     <Providers data={providers} />
                 </Padding>
             </SidePanel>

@@ -1,13 +1,10 @@
 import * as React from 'react';
-import BaseText from '../base/Text';
+import Text from '../base/Text';
 
-import { ProviderType } from '../base/Types';
+import Row from '../base/Row';
+import Margin from '../base/Margin';
 import Provider from '../base/Provider';
-
-const Text = BaseText.extend`
-    color: #352e56;
-    margin-left: 16px;
-`;
+import { ProviderType } from '../base/Types';
 
 export interface ProviderData {
     type: ProviderType;
@@ -24,9 +21,17 @@ const Providers = ({ data }: Props) => (
             data.map((p: ProviderData) => {
                 const value = p.value == null ? '' : p.value.toFixed(3);
                 return (
-                    <div key={p.type} style={{ display: 'flex', alignItems: 'center', marginBottom: 16 }}>
-                        <Provider type={p.type} /><Text>{value}</Text>
-                    </div>);
+                    <Margin key={p.type} bottom={16}>
+                        <Row>
+                            <Provider type={p.type} />
+                            <Margin left={16}>
+                                <Text>
+                                    {value}
+                                </Text>
+                            </Margin>
+                        </Row>
+                    </Margin>
+                );
             })
         }
     </>

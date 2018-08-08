@@ -13,7 +13,7 @@ const data = {
         { title: 'AVERAGE PER DAY', value: 20.520, direction: Direction.UP },
         { title: 'AVERAGE PER CAMPAIGN', value: 281.234, direction: Direction.DOWN },
     ],
-    popover: {
+    dropdownData: {
         title: 'SHOW SERVICES',
         options: [
             'All Campaigns',
