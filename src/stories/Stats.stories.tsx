@@ -33,16 +33,24 @@ const data = {
 class StatsDefault extends React.Component {
     state = {
         index: 0,
+        hidden: false,
     };
 
     public render() {
         return (
-            <SidePanel
-                {...data}
-                index={this.state.index}
-                onSelected={(index) => this.setState({ index })}
-                hidden={false}
-            />
+            <div>
+                <button
+                    onClick={() => this.setState({ hidden: !this.state.hidden })}
+                >
+                    Toggle
+                </button>
+                <SidePanel
+                    {...data}
+                    index={this.state.index}
+                    onSelected={(index) => this.setState({ index })}
+                    hidden={this.state.hidden}
+                />
+            </div>
         );
     }
 }
