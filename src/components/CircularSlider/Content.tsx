@@ -1,28 +1,13 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import Title from '../../base/Title';
-import Header from '../../base/H2';
-import Lock from '../../base/Lock';
+import Header from '../base/H2';
+import Lock from '../base/Lock';
+import Title from '../base/Title';
+import Column from '../base/Circle/Column';
 
-import Item from './Item';
-
-const Column = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    position: absolute;
-    top: 0px;
-
-    width: 160px;
-    height: 160px;
-
-    margin: 20px;
-    border-radius: 50%;
-
-    user-select: none;
+const Item = styled.div`
+    padding: 8px;
 `;
 
 interface Props {

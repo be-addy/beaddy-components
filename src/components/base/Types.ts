@@ -8,4 +8,5 @@ export enum ProviderType {
     FACEBOOK,
     GOOGLE,
     APPNEXUS,
+    NONE,
 }

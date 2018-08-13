@@ -8,6 +8,7 @@ import { ModalOkCancelDefault } from './stories/ModalOkCancel.stories';
 import { LineChartDefault } from './stories/LineChart.stories';
 import { DateRangeDefault } from './stories/DateRange.stories';
 import { CircularSliderDefault } from './stories/CircularSlider.stories';
+import { PieChartDefault, PieChartNoIcon } from './stories/PieChart.stories';
 
 const COMPONENTS = [
     TextButtonDefault,
@@ -18,6 +19,8 @@ const COMPONENTS = [
     LineChartDefault,
     DateRangeDefault,
     CircularSliderDefault,
+    PieChartDefault,
+    PieChartNoIcon,
 ];
 
 class TestComponents extends React.Component {

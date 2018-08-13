@@ -16,4 +16,8 @@ const Text = styled.div`
     line-height: 1.29;
 `;
 
+export const Light = Text.extend`
+    color: #b7b3cc;
+`;
+
 export default Text;

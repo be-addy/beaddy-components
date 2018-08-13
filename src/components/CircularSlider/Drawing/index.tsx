@@ -1,13 +1,17 @@
 import * as React from 'react';
 
-import {
+import {    
     RadiusInScreenPixels,
     Radius,
+} from '../../base/Circle/const';
+
+import {
     Width,
     ThumbRadius
 } from '../const';
 
-import { Svg, Outer, Inner, Thumb } from './Components';
+import { Outer, Thumb } from './Components';
+import { Svg, Inner } from '../../base/Circle/Components';
 
 interface Props {
     onRef: (e: any) => void;

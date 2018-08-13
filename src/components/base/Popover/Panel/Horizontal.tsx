@@ -36,4 +36,5 @@ export const Content = styled.div`
     background: rgb(53, 46, 86);
 
     padding: 8px;
+    z-index: 1;
 `;
