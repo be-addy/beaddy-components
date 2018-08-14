@@ -24,13 +24,23 @@ const Dark: Theme = {
     },
 
     text: {
-        color: 'white',
+        color: {
+            default: 'white',
+            highlight: 'lightgreen',
+        },
+    },
+
+    link: {
+        color: {
+            default: 'red',
+            highlight: 'green',
+        },
     },
 
     panel: {
         color: 'darkgrey',
     },
-    
+
     change: {
         positive: {
             color: 'lightgrey',
@@ -74,7 +84,13 @@ const Dark: Theme = {
                 color: 'white',
             },
         },
-    }
+    },
+
+    circularSlider: {
+        background: {
+            color: '#505050',
+        },
+    },
 };
 
 export default Dark;

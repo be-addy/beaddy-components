@@ -17,12 +17,12 @@ const Title = BaseTitle.extend`
     margin-bottom: 8px;
 `;
 
-export interface PopoverData {
+export interface DropdownData {
     title: string;
     options: string[];
 }
 
-interface Props extends PopoverData {
+interface Props extends DropdownData {
     index: number;
     onSelected: (index: number) => void;
 }

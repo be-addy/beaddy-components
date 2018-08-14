@@ -1,50 +1,20 @@
 import * as React from 'react';
-import styled from 'styled-components';
 
 import H3 from '../base/H3';
 import Line from '../base/Line';
 import Row from '../base/Row';
-
-import Dropdown, { PopoverData } from '../base/Dropdown';
-
+import Padding from '../base/Padding';
 import SidePanel from '../base/SidePanel';
+import Dropdown, { DropdownData } from '../base/Dropdown';
 
 import Card, { CardData } from './Card';
-
-const Padding = styled.div`
-    padding: 4px 0 4px 28px;
-`;
-
-const PaddingActivities = Padding.extend`
-    padding-bottom: 16px;
-`;
-
-const PaddingDropdown = Padding.extend`
-    padding: 32px 48px 20px 28px;
-`;
-
-const Circle = styled.div`
-    border-radius: 50%;
-    background: #23e2a1;
-    width: 16px;
-    height: 16px;
-    text-align: center;
-    margin-left: 4px;
-`;
-
-const Text = styled.div`
-    font-family: Muli;
-    font-size: 10px;
-    font-weight: 600;
-    text-align: center;
-    color: #ffffff;
-`;
+import Circle from './Circle';
 
 interface Props {
     activities: number;
     data: Array<CardData>;
-    popover: PopoverData;
 
+    dropdownData: DropdownData;
     index: number;
     onSelected: (index: number) => void;
 
@@ -53,30 +23,34 @@ interface Props {
     hidden: boolean;
 }
 
+const Cards = Padding.extend`
+    height: 440px;
+    overflow-y: scroll;
+`;
+
+const Left = 28;
 class CardList extends React.Component<Props> {
     public render() {
-        const { activities, data, popover, index, onSelected, onClose } = this.props;
+        const { activities, data, onClose, dropdownData, index, onSelected } = this.props;
         return (
             <SidePanel hidden={this.props.hidden}>
-                <PaddingDropdown>
-                    <Dropdown {...popover} index={index} onSelected={(i) => onSelected(i)} />
-                </PaddingDropdown>
+                <Padding top={32} right={48} bottom={20} left={Left}>
+                    <Dropdown {...dropdownData} index={index} onSelected={(i) => onSelected(i)} />
+                </Padding>
                 <Line />
-                <div style={{ padding: '20px 0 32px 0' }}>
-                    <PaddingActivities>
+                <Cards top={20} bottom={32}>
+                    <Padding bottom={16} left={Left}>
                         <Row>
                             <H3>Activities</H3>
-                            <Circle>
-                                <Text>{activities}</Text>
-                            </Circle>
+                            <Circle>{activities}</Circle>
                         </Row>
-                    </PaddingActivities>
+                    </Padding>
                     {data.map((c) => (
-                        <Padding>
+                        <Padding top={4} bottom={4} left={Left}>
                             <Card onClose={(id) => onClose(id)} {...c} />
                         </Padding>
                     ))}
-                </div>
+                </Cards>
             </SidePanel>
         );
     }

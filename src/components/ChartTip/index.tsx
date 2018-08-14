@@ -12,7 +12,7 @@ import { Direction, ProviderType } from '../base/Types';
 
 import Panel from './Panel';
 
-interface Props {
+export interface ChartTipData {
     provider: ProviderType;
     value: string;
     change: string;
@@ -22,16 +22,14 @@ interface Props {
     y?: string;
 }
 
-const ChartTip = ({ provider, value, change, direction, visible, x, y }: Props) => (
+const ChartTip = ({ provider, value, change, direction, visible, x, y }: ChartTipData) => (
     <Menu visible={visible} x={x} y={y}>
         <Panel>
             <Row>
                 <Provider type={provider} />
                 <Value>{value}</Value>
                 <Change direction={direction}>{change}</Change>
-                <div style={{ width: 10, height: 10 }}>
-                    <Arrow direction={direction} />
-                </div>
+                <Arrow width={10} height={10} direction={direction} />
             </Row>
         </Panel>
     </Menu>

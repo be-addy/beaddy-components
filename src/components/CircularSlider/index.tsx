@@ -1,9 +1,12 @@
 import * as React from 'react';
-import * as util from './util';
+import * as util from '../base/Circle/util';
 
-import {
+import {    
     RadiusInScreenPixels,
     Radius,
+} from '../base/Circle/const';
+
+import {
     ThumbRadius,
     ThumbStroke
 } from './const';
@@ -80,14 +83,7 @@ class CircularSlider extends React.Component<Props> {
             return;
         }
 
-        let rect = this.element.getBoundingClientRect();
-
-        const dx = e.x - rect.x - RadiusInScreenPixels;
-        const dy = RadiusInScreenPixels - (e.y - rect.y);
-
-        let rads = util.getAngle(dx, dy);
-        let pos = util.radsToPerc(rads);
-
+        let pos = util.pointToCirclePercents(RadiusInScreenPixels, this.element, e);
         this.props.onPosChange(pos);
     }
 

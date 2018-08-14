@@ -1,4 +1,14 @@
-export function getAngle(x: number, y: number) {
+export function pointToCirclePercents(r: number, element: any, event: MouseEvent) {
+    let rect = element.getBoundingClientRect();
+
+    const dx = event.x - rect.x - r;
+    const dy = r - (event.y - rect.y);
+
+    let rads = getAngle(dx, dy);
+    return radsToPerc(rads);
+}
+
+function getAngle(x: number, y: number) {
     if (x > 0 && y > 0) {
         return Math.atan(x / y);
     }
@@ -30,7 +40,7 @@ export function getAngle(x: number, y: number) {
     return 3 * Math.PI / 2;
 }
 
-export function radsToPerc(rads: number) {
+function radsToPerc(rads: number) {
     return (rads / (2 * Math.PI)) * 100;
 }
 

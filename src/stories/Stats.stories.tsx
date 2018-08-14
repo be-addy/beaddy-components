@@ -13,7 +13,7 @@ const data = {
         { title: 'AVERAGE PER DAY', value: 20.520, direction: Direction.UP },
         { title: 'AVERAGE PER CAMPAIGN', value: 281.234, direction: Direction.DOWN },
     ],
-    popover: {
+    dropdownData: {
         title: 'SHOW SERVICES',
         options: [
             'All Campaigns',
@@ -33,16 +33,24 @@ const data = {
 class StatsDefault extends React.Component {
     state = {
         index: 0,
+        hidden: false,
     };
 
     public render() {
         return (
-            <SidePanel
-                {...data}
-                index={this.state.index}
-                onSelected={(index) => this.setState({ index })}
-                hidden={false}
-            />
+            <div>
+                <button
+                    onClick={() => this.setState({ hidden: !this.state.hidden })}
+                >
+                    Toggle
+                </button>
+                <SidePanel
+                    {...data}
+                    index={this.state.index}
+                    onSelected={(index) => this.setState({ index })}
+                    hidden={this.state.hidden}
+                />
+            </div>
         );
     }
 }

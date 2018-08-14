@@ -1,22 +1,16 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import Extra, { ExtraData } from './Extra';
+import Text from '../../base/Text';
+import Padding from '../../base/Padding';
 
-import Text from '../../base/SidePanel/Text';
-
-import Icon, { CardIcon } from '../Icons';
 import Close from '../Icons/Close';
+import Icon, { CardIcon } from '../Icons';
 
+import Date from './Date';
+import Link from './Link';
 import Panel from './Panel';
-
-const Date = styled.div`
-  font-family: Muli;
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 1px;
-  color: ${(props: any) => props.highlight ? '#ffffff' : '#b7b3cc'};
-`;
+import Extra, { ExtraData } from './Extra';
 
 export interface CardData {
     id: number;
@@ -36,34 +30,16 @@ const Row = styled.div`
     padding: 4px;
 `;
 
-const Link = styled.a`
-  font-family: Muli;
-  font-size: 14px;
-  color: ${(props: any) => props.highlight ? '#ffffff' : '#5b31da'};
-  text-decoration: none;
-  display: block;
-  text-align: center;
-  padding: 0 0 16px 0;
-`;
-
-const HighlightedText = Text.extend`
-    color: #ffffff;
-`;
-
 interface Props extends CardData {
     onClose: (id: number) => void;
 }
-
-const Padding = styled.div`
-    padding: 8px 12px 0 12px;
-`;
 
 class Card extends React.Component<Props> {
     public render() {
         const { id, date, icon, text, link, linkText, highlight, extra, onClose } = this.props;
         return (
             <Panel highlight={highlight}>
-                <Padding>
+                <Padding top={8} right={12} bottom={0} left={12}>
                     <Row>
                         <Date highlight={highlight}>{date}</Date>
                         <div style={{ flex: 1 }} />
@@ -74,11 +50,7 @@ class Card extends React.Component<Props> {
                             <Icon name={icon} highlight={highlight} height={18} width={18} />
                         </div>
                         <div style={{ paddingRight: 24 }}>
-                            {
-                                highlight
-                                    ? <HighlightedText>{text}</HighlightedText>
-                                    : <Text>{text}</Text>
-                            }
+                            <Text highlight={highlight}>{text}</Text>
                         </div>
                     </Row>
                 </Padding>

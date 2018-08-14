@@ -87,19 +87,27 @@ class CardListDefault extends React.Component {
     state = {
         index: 0,
         cards,
+        hidden: false,
     };
 
     public render() {
         return (
-            <CardList
-                activities={2}
-                data={this.state.cards}
-                onClose={(id) => this.remove(id)}
-                index={this.state.index}
-                onSelected={(index) => this.setState({ index })}
-                popover={popover}
-                hidden={false}
-            />
+            <div>
+                <button
+                    onClick={() => this.setState({ hidden: !this.state.hidden })}
+                >
+                    Toggle
+                </button>
+                <CardList
+                    activities={2}
+                    data={this.state.cards}
+                    onClose={(id) => this.remove(id)}
+                    index={this.state.index}
+                    onSelected={(index) => this.setState({ index })}
+                    dropdownData={popover}
+                    hidden={this.state.hidden}
+                />
+            </div>
         );
     }
 

@@ -82,7 +82,7 @@ class Chart extends React.Component<Props> {
         return {
             visible: true,
             x: x + 5 + 'px',
-            y: y + 18 + 'px',
+            y: y - 18 + 'px',
             value: value / 1000,
             provider,
             direction: change > 0 ? Direction.UP : Direction.DOWN,

@@ -11,6 +11,7 @@ const Icons = [
     { type: ProviderType.TWITTER, icon: Twitter },
     { type: ProviderType.GOOGLE, icon: Google },
     { type: ProviderType.APPNEXUS, icon: AppNexus },
+    { type: ProviderType.NONE, icon: () => <div /> },
 ];
 
 const get = (type: ProviderType) => {

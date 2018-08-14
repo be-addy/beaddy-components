@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
-const Row = styled.div`
+const Column = styled.div`
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
 `;
 
-export default Row;
+export default Column;

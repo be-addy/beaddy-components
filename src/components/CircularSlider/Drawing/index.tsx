@@ -1,35 +1,17 @@
 import * as React from 'react';
-import styled from 'styled-components';
-import {
+
+import {    
     RadiusInScreenPixels,
     Radius,
+} from '../../base/Circle/const';
+
+import {
     Width,
-    ThumbStroke,
     ThumbRadius
 } from '../const';
 
-const Svg = styled.svg`
-    transform: rotate(-90deg);
-    border-radius: 50%;
-`;
-
-const Outer = styled.circle`
-    fill: lightgrey;
-    stroke: #5b31da;
-    stroke-width: 32;
-`;
-
-const Inner = styled.circle`
-    fill: #ffffff;
-    stroke: none;
-    stroke-width: 1;
-`;
-
-const Thumb = styled.circle`
-    stroke: #5b31da;
-    stroke-width: ${ThumbStroke};
-    fill: #ffffff;
-`;
+import { Outer, Thumb } from './Components';
+import { Svg, Inner } from '../../base/Circle/Components';
 
 interface Props {
     onRef: (e: any) => void;
